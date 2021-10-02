@@ -1,10 +1,21 @@
 import React from 'react'
+import Footer from './Footer';
 
-const Layout = () => {
+import Meta from './Meta';
+import Nav from './Nav';
+
+const Layout: React.FC = () => {
+    const layoutMeta = {title: 'Vals Page', keywords: 'Occupational Therapist, OT, Autism', description: ''}
+    
     return (
-        <div>
-            
-        </div>
+        <>
+            <Meta {...layoutMeta}/>
+            <div>
+                <Nav />
+
+                <Footer />
+            </div>
+        </>
     )
 }
 
