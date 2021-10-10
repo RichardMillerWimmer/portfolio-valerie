@@ -1,9 +1,14 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Nav: React.FC = () => {
     return (
         <nav>
-            <h3>Nav Component</h3>
+            <Link href='/'>Home</Link>
+            <Link href='/about'>About</Link>
+            <Link href='contact'>Contact</Link>
+            <Link href='/cv'>CV</Link>
+            <Link href='work'>Work</Link>
         </nav>
     )
 }
