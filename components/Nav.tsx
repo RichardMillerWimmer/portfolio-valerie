@@ -6,9 +6,9 @@ const Nav: React.FC = () => {
         <nav>
             <Link href='/'>Home</Link>
             <Link href='/about'>About</Link>
-            <Link href='contact'>Contact</Link>
+            <Link href='/contact'>Contact</Link>
             <Link href='/cv'>CV</Link>
-            <Link href='work'>Work</Link>
+            <Link href='/work'>Work</Link>
         </nav>
     )
 }
