@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 
-interface UserContact {
+interface FormSubmit {
     name: string,
     email: string,
     message: string
@@ -15,11 +16,21 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        let contaceData: UserContact = {
+        let body: FormSubmit = {
             name, 
             email, 
             message
         }
+
+        axios.post('/api/contact/', body)
+            .then(() => {
+                console.log('.then hit')
+                setSubmitted(true)
+                setName('')
+                setEmail('')
+                setMessage('')
+            })
+            .catch((err) => console.log(err))
     }
 
     return (
