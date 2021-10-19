@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styled from 'styled-components';
 
 const Ul = styled.ul`
+z-index: 1;
 list-style: none;
 display: flex;
 flex-flow: row nowrap;
