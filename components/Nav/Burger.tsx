@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import NavList from './NavList';
 
 const StyledBurger = styled.div`
-background-color: #3d3d3d;
 width: 2rem;
 height: 2rem;
 position: fixed;
 bottom: 15px;
 left: 50%;
-transform: translate(-50%, 0);
+transition: all 0.3s linear;
+transform: ${({open}) => open ? 'translate(-35%, 0)': 'translate(-46%)'};
 z-index: 20;
 display: none;
 @media (max-width: 768px) {
