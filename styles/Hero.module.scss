@@ -1,0 +1,30 @@
+.heroContainer {
+    position: relative;
+}
+
+.heroTextBox {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background-color: #ffffff50;
+    padding: 15px;
+    text-align: center;
+}
+
+.innerBorderX {
+    padding: 8px;
+    // border-top: 1px black solid;
+    border-right: 1px black solid;
+    // border-bottom: 1px black solid;
+    border-left: 1px black solid;
+    // transform: scale(1, 1);
+}
+.innerBorderY {
+    padding: 8px;
+    height: 50%;
+    border-top: 1px black solid;
+    // border-right: 1px black solid;
+    border-bottom: 1px black solid;
+    // border-left: 1px black solid;
+    // transform: scale(1, 1);
+}

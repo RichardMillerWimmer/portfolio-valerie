@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 
 import '../styles/reset.css'
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 
 function MyApp({ Component, pageProps }) {

@@ -1,13 +1,20 @@
 import React from 'react'
 import Image from 'next/image'
+import styles from '../styles/Hero.module.scss'
 
 const Hero = () => {
     return (
         <section>
-            <h1>Hero Component</h1>
-            <div>
-                <Image src='/Miller_Valerie.png' width='250' height='375'/>
-                <h1>Valerie Miller PhD OTLR</h1>
+            <div className={styles.heroContainer}>
+                <Image src='/Val_Iceland.jpeg' width='2048' height='1356'/>
+                <div className={styles.heroTextBox}>
+                    <div className={styles.innerBorderY}>
+                        <div className={styles.innerBorderX}>
+                            <h1>Valerie Miller</h1>
+                            <h3>Ph.D. OTR-L</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     )
