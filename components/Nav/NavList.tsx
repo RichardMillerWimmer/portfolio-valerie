@@ -7,6 +7,7 @@ z-index: 1;
 list-style: none;
 display: flex;
 flex-flow: row nowrap;
+justify-content: center;
 li {
     text-align: center;
     padding: 18px 10px;
