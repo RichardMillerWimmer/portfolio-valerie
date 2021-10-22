@@ -42,21 +42,16 @@
   }
 }
 
-// .innerBorderX {
-//     padding: 8px;
-//     // border-top: 1px black solid;
-//     border-right: 1px black solid;
-//     // border-bottom: 1px black solid;
-//     border-left: 1px black solid;
-//     // transform: scale(1, 1);
-// }
-// .innerBorderY {
-//     padding: 8px;
-//     height: 50%;
-//     border-top: 1px black solid;
-//     // border-right: 1px black solid;
-//     border-bottom: 1px black solid;
-//     border-bottom-length: ;
-//     // border-left: 1px black solid;
-//     // transform: scale(1, 1);
-// }
+@media screen and (min-width: 450px) {
+  .heroTextBox {
+    padding: 25px;
+    &::before,
+    &::after {
+    top: .9em;
+    bottom: .9em;
+    left: .9em;
+    right: .9em;
+  }
+  }
+}
+
