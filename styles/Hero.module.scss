@@ -1,57 +1,58 @@
+@import "variables";
+
 .heroContainer {
-    position: relative;
+  position: relative;
 }
 
 .heroTextBox {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background-color: #ffffff50;
+  padding: 15px;
+  text-align: center;
+  &::before,
+  &::after {
+    content: "";
     position: absolute;
-    top: 10%;
-    right: 10%;
-    background-color: #ffffff50;
-    padding: 15px;
-    text-align: center;
-    &::before,
-    &::after {
-    content: '';
-    position: absolute;
-    top: .6em;
-    bottom: .6em;
-    left: .6em;
-    right: .6em;
+    top: 0.6em;
+    bottom: 0.6em;
+    left: 0.6em;
+    right: 0.6em;
     opacity: 1;
     transition: transform ease-out 250ms;
   }
-  
+
   &::before {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    transform: scale(0,1);
+    transform: scale(0, 1);
   }
-  
+
   &::after {
     border-left: 1px solid black;
     border-right: 1px solid black;
-    transform: scale(1,0);
+    transform: scale(1, 0);
   }
-  
+
   &::before {
     transform: scale(1.05, 1);
   }
-  
+
   &:after {
     transform: scale(1, 1.1);
   }
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: $bp-mobile) {
   .heroTextBox {
     padding: 25px;
     &::before,
     &::after {
-    top: .9em;
-    bottom: .9em;
-    left: .9em;
-    right: .9em;
-  }
+      top: 0.9em;
+      bottom: 0.9em;
+      left: 0.9em;
+      right: 0.9em;
+    }
   }
 }
-
