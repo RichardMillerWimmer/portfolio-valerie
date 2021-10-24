@@ -1,11 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
+$font-body: "Roboto Condensed", sans-serif;
+// $font-header: ;
+
+$color-white: #ffffff;
+$color-black: #131613;
+$color-primary: #0d3052;
+$color-black: #aaeeeb;
+
+$bp-mobile: 450px;
+$bp-tablet: 768px;
 
 html,
 body {
   color: #3d3d3d;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $font-body;
   line-height: 1.5;
 }
 
@@ -31,7 +42,7 @@ li {
   font-size: 1.5rem;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: $bp-mobile) {
   h1 {
     font-size: 2.6rem;
   }
@@ -40,7 +51,7 @@ li {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $bp-tablet) {
   h1 {
     font-size: 3.5rem;
   }
@@ -48,5 +59,3 @@ li {
     font-size: 2rem;
   }
 }
-
-
