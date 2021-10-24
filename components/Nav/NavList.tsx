@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import styled from 'styled-components';
+import { useRouter } from 'next/router'
+import styled from 'styled-components'
 
 const Ul = styled.ul`
 z-index: 1;
@@ -35,14 +36,16 @@ interface NavProps {
 }
 
 const NavList: React.FC<NavProps> = ({ open, setOpen }: NavProps) => {
+    const router = useRouter();
+    // console.log(router)
 
     return (
         <Ul open={open}>
             <li onClick={() => setOpen(!open)}><Link href='/' >Home</Link></li>
+            <li onClick={() => setOpen(!open)}><Link href='/work'>Projects</Link></li>
             <li onClick={() => setOpen(!open)}><Link href='/about'>About</Link></li>
-            <li onClick={() => setOpen(!open)}><Link href='/contact'>Contact</Link></li>
             <li onClick={() => setOpen(!open)}><Link href='/cv'>CV</Link></li>
-            <li onClick={() => setOpen(!open)}><Link href='/work'>Work</Link></li>
+            <li onClick={() => setOpen(!open)}><Link href='/contact'>Contact</Link></li>
         </Ul>
     )
 }
