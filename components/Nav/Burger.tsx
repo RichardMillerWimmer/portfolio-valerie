@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import NavList from './NavList';
-// import styles from '../../styles/Nav.module.scss'
+import styles from '../../styles/Burger.module.scss'
 
 const StyledBurger = styled.div`
 width: 2rem;
 height: 2rem;
 position: fixed;
-bottom: 15px;
+bottom: 12px;
 left: 50%;
 transition: all 0.3s linear;
 transform: ${({open}) => open ? 'translate(-35%, 0)': 'translate(-46%)'};
@@ -42,14 +42,16 @@ const Burger = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <>
+      <>
+        <div className={styles.burgerContainer}>
             <StyledBurger open={open} onClick={() => setOpen(!open)}>
                 <div />
                 <div />
                 <div />
             </StyledBurger>
+          </div>  
             <NavList open={open} setOpen={setOpen}/>
-        </>
+      </>
     )
 }
 
