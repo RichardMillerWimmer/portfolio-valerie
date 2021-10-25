@@ -5,8 +5,11 @@ const Feature: React.FC = () => {
         <div>
             <h3>Feature</h3>
             <h4>Title</h4>
+            <h6>Authors</h6>
+            <p>Date</p>
+            <p>Where</p>
             <p>Image</p>
-            <p>Short body</p>
+            <p>Body</p>
         </div>
     )
 }
