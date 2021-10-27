@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
+import styles from '../../styles/NavList.module.scss';
 
 const Ul = styled.ul`
 z-index: 1;
@@ -41,11 +42,11 @@ const NavList: React.FC<NavProps> = ({ open, setOpen }: NavProps) => {
 
     return (
         <Ul open={open}>
-            <li onClick={() => setOpen(!open)}><Link href='/' >Home</Link></li>
-            <li onClick={() => setOpen(!open)}><Link href='/work'>Projects</Link></li>
-            <li onClick={() => setOpen(!open)}><Link href='/about'>About</Link></li>
-            <li onClick={() => setOpen(!open)}><Link href='/cv'>CV</Link></li>
-            <li onClick={() => setOpen(!open)}><Link href='/contact'>Contact</Link></li>
+            <li className={router.pathname === "/" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/' >Home</Link></li>
+            <li className={router.pathname === "/projects" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/projects'>Projects</Link></li>
+            <li className={router.pathname === "/about" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/about'>About</Link></li>
+            <li className={router.pathname === "/cv" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/cv'>CV</Link></li>
+            <li className={router.pathname === "/contact" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/contact'>Contact</Link></li>
         </Ul>
     )
 }
