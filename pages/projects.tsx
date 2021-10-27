@@ -3,7 +3,7 @@ import React from 'react'
 const Projects = () => {
     return (
         <div>
-            <h1>Work Component</h1>
+            <h1>Projects Component</h1>
         </div>
     )
 }
