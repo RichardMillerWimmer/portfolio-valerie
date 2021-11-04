@@ -1,15 +1,17 @@
 import React from 'react'
+import Image from 'next/image'
 
-const Feature: React.FC = () => {
+type Feature = {
+    title: string,
+    body: string
+}
+
+const Feature: React.FC<Feature> = (props: Feature) => {
     return (
         <div>
-            <h3>Feature</h3>
             <h4>Title</h4>
-            <h6>Authors</h6>
-            <p>Date</p>
-            <p>Where</p>
-            <p>Image</p>
             <p>Body</p>
+            {/* <Image src={''} alt='' width={0} height={0}/> */}
         </div>
     )
 }

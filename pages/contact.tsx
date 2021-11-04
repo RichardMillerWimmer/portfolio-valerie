@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { NextPage } from 'next'
 
-interface FormSubmit {
+type FormSubmit = {
     name: string,
     email: string,
     message: string
 }
 
-const Contact = () => {
+const Contact: NextPage = () => {
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [message, setMessage] = useState<string>('')
