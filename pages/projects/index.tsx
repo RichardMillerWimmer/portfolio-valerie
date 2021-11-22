@@ -12,7 +12,8 @@ export type ProjectType = {
     authors: Author[], 
     journal: string, 
     link: string,
-    image: string
+    image: string,
+    feature: boolean
 }
 
 const testData: ProjectType[] = [
@@ -23,7 +24,8 @@ const testData: ProjectType[] = [
         authors: ['Val'], 
         journal: 'journal 1', 
         link: 'link 1',
-        image: 'image 1'
+        image: 'image 1',
+        feature: false
     },
     {
         id: 1,
@@ -32,7 +34,8 @@ const testData: ProjectType[] = [
         authors: ['Val'], 
         journal: 'journal 2', 
         link: 'link 2',
-        image: 'image 2'
+        image: 'image 2',
+        feature: false
     }
 ]
 
