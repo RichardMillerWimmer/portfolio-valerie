@@ -1,12 +1,12 @@
 import { NextPage } from 'next'
 import React from 'react'
+import Project from './[id]'
 // import Project from '../components/Project'
 
-type Author = {
-    name: string
-}
+type Author = string
 
-type Project = {
+export type ProjectType = {
+    id: number,
     title: string, 
     date: string,
     authors: Author[], 
@@ -15,8 +15,9 @@ type Project = {
     image: string
 }
 
-const testData = [
+const testData: ProjectType[] = [
     {
+        id: 0,
         title: 'test title 1', 
         date: 'some date 1',
         authors: ['Val'], 
@@ -25,6 +26,7 @@ const testData = [
         image: 'image 1'
     },
     {
+        id: 1,
         title: 'test title 2', 
         date: 'some date 2',
         authors: ['Val'], 
@@ -36,15 +38,18 @@ const testData = [
 
 
 const Projects: NextPage = () => {
-    
+
     return (
-        <div>
+        <section>
             <h1>Projects Component</h1>
             <div>
-                {/* <Project /> */}
-                {/* <Project /> */}
+                {testData.map((project) => (
+                    <div key={project.id}>
+                        <Project {...project}/>
+                    </div>
+                ))}
             </div>
-        </div>
+        </section>
     )
 }
 
