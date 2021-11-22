@@ -1,13 +1,16 @@
 @import "variables.scss";
+@import "./mixin.scss";
+
+.aboutContainer {
+  padding: 20px;
+}
 
 .aboutHeader {
   padding: 10px 0;
 }
 
 .boxshadow {
-  box-shadow: 2px 1px 15px 5px rgb(223, 223, 223);
-  padding: 10px;
-  border-radius: 5px;
+  @include boxshadow;
 }
 
 .contentBox {
