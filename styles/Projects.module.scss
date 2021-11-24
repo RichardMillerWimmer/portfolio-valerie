@@ -1,0 +1,10 @@
+@import "variables.scss";
+@import "./mixin.scss";
+
+.projectsContainer {
+  padding: 20px;
+}
+
+.boxshadow {
+  @include boxshadow;
+}

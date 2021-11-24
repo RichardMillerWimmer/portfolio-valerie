@@ -1,16 +1,16 @@
 import { NextPage } from 'next'
 import React from 'react'
 import Project from './[id]'
-// import Project from '../components/Project'
+import styles from '../../styles/Projects.module.scss';
 
 type Author = string
 
 export type ProjectType = {
     id: number,
-    title: string, 
+    title: string,
     date: string,
-    authors: Author[], 
-    journal: string, 
+    authors: Author[],
+    journal: string,
     link: string,
     image: string,
     feature: boolean
@@ -19,20 +19,20 @@ export type ProjectType = {
 const testData: ProjectType[] = [
     {
         id: 0,
-        title: 'test title 1', 
+        title: 'test title 1',
         date: 'some date 1',
-        authors: ['Val'], 
-        journal: 'journal 1', 
+        authors: ['Val'],
+        journal: 'journal 1',
         link: 'link 1',
         image: 'image 1',
         feature: false
     },
     {
         id: 1,
-        title: 'test title 2', 
+        title: 'test title 2',
         date: 'some date 2',
-        authors: ['Val'], 
-        journal: 'journal 2', 
+        authors: ['Val'],
+        journal: 'journal 2',
         link: 'link 2',
         image: 'image 2',
         feature: false
@@ -43,14 +43,19 @@ const testData: ProjectType[] = [
 const Projects: NextPage = () => {
 
     return (
-        <section>
-            <h1>Projects Component</h1>
-            <div>
-                {testData.map((project) => (
-                    <div key={project.id}>
-                        <Project {...project}/>
-                    </div>
-                ))}
+        <section className={styles.projectsContainer}>
+            <div className={styles.boxshadow}>
+                <h1>Projects</h1>
+                <div>
+                    <p>My work includes..."this is to be a larger section about the type of projects and potential highlighed projects"</p>
+                </div>
+                <div>
+                    {testData.map((project) => (
+                        <div key={project.id}>
+                            <Project {...project} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     )

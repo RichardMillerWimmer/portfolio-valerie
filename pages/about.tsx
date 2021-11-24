@@ -7,7 +7,7 @@ const About: NextPage = () => {
     return (
         <section className={styles.aboutContainer}>
             <div className={styles.boxshadow}>
-                <h2 className={styles.aboutHeader}>Get to know me a little better.</h2>
+                <h2 className={styles.aboutHeader}>About</h2>
                 <div className={styles.contentBox}>
                     <div className={styles.imageBox}>
                         <Image src='/Miller_Valerie_Headshot.png' width={150} height={230} alt='Valerie Miller' layout='intrinsic' />
