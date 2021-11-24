@@ -8,4 +8,18 @@
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (min-width: $bp-tablet) {
+  .footer {
+    h6 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+    }
+  }
 }
