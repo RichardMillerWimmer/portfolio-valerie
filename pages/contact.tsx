@@ -2,9 +2,11 @@ import React, { SyntheticEvent, useState } from 'react'
 import axios from 'axios'
 import { NextPage } from 'next'
 
-import yup, { SchemaOf } from 'yup'
+import * as yup from 'yup'
 import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+
+import FormInput from '../components/FormInput'
 
 type FormSubmit = {
     name: string,
@@ -12,7 +14,7 @@ type FormSubmit = {
     message: string
 }
 
-const schema: SchemaOf<FormSubmit> = yup.object().shape({
+const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
     name: yup.string().max(20).required(),
     email: yup.string().max(30).email().required(),
     message: yup.string().max(250).required()
@@ -20,10 +22,11 @@ const schema: SchemaOf<FormSubmit> = yup.object().shape({
 
 const Contact: NextPage = () => {
     const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
-    const [name, setName] = useState<string>('')
-    const [email, setEmail] = useState<string>('')
-    const [message, setMessage] = useState<string>('')
-    const [submitted, setSubmitted] = useState<boolean>(false)
+
+    // const [name, setName] = useState<string>('')
+    // const [email, setEmail] = useState<string>('')
+    // const [message, setMessage] = useState<string>('')
+    // const [submitted, setSubmitted] = useState<boolean>(false)
 
     const formSubmitHandler: SubmitHandler<FormSubmit> = (data: FormSubmit, e: SyntheticEvent) => {
         e.preventDefault()
@@ -45,20 +48,9 @@ const Contact: NextPage = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
                     <div>
-                        <label htmlFor='name'>Name</label>
-                        <br />
-                        <input type='text' name='name' required onChange={e => setName(e.target.value)}></input>
+                        <FormInput />
                     </div>
-                    <div>
-                        <label htmlFor='email'>Email</label>
-                        <br />
-                        <input type='text' name='email' required onChange={e => setEmail(e.target.value)}></input>
-                    </div>
-                    <div>
-                        <label htmlFor='message'>Message</label>
-                        <br />
-                        <textarea rows={4} cols={20} name='message' required onChange={e => setMessage(e.target.value)}></textarea>
-                    </div>
+
                     <div>
                         <input type='submit'></input>
                     </div>
