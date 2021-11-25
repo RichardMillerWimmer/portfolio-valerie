@@ -7,7 +7,6 @@ import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 
 import FormInput from '../components/FormInput'
-import FormTextArea from '../components/FormTextArea'
 
 type FormSubmit = {
     name: string,
@@ -41,9 +40,9 @@ const Contact: NextPage = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
                     <div>
-                        <FormInput {... { name: 'name' }} />
-                        <FormInput {... { name: 'email' }} />
-                        <FormTextArea />
+                        <FormInput {...{ name: 'name', multiline: false }} />
+                        <FormInput {...{ name: 'email', multiline: false }} />
+                        <FormInput {...{ name: 'message', multiline: true, rows: 5 }} />
                     </div>
 
                     <div>
