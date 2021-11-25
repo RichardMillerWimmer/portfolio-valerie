@@ -7,6 +7,7 @@ import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 
 import FormInput from '../components/FormInput'
+import FormTextArea from '../components/FormTextArea'
 
 type FormSubmit = {
     name: string,
@@ -23,10 +24,7 @@ const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
 const Contact: NextPage = () => {
     const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
 
-    // const [name, setName] = useState<string>('')
-    // const [email, setEmail] = useState<string>('')
-    // const [message, setMessage] = useState<string>('')
-    // const [submitted, setSubmitted] = useState<boolean>(false)
+    const [submitted, setSubmitted] = useState<boolean>(false)
 
     const formSubmitHandler: SubmitHandler<FormSubmit> = (data: FormSubmit, e: SyntheticEvent) => {
         e.preventDefault()
@@ -34,11 +32,6 @@ const Contact: NextPage = () => {
 
         // axios.post('/api/contact/', data)
         //     .then(() => {
-        //         console.log('.then hit')
-        //         setSubmitted(true)
-        //         setName('')
-        //         setEmail('')
-        //         setMessage('')
         //     })
         //     .catch((err) => console.log(err))
     }
@@ -48,7 +41,9 @@ const Contact: NextPage = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
                     <div>
-                        <FormInput />
+                        <FormInput {... { name: 'name' }} />
+                        <FormInput {... { name: 'email' }} />
+                        <FormTextArea />
                     </div>
 
                     <div>
