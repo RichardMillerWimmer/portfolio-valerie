@@ -10,7 +10,7 @@ const About: NextPage = () => {
                 <h2 className={styles.aboutHeader}>About</h2>
                 <div className={styles.contentBox}>
                     <div className={styles.imageBox}>
-                        <Image src='/Miller_Valerie_Headshot.png' width={150} height={230} alt='Valerie Miller' layout='intrinsic' />
+                        <Image src='/Miller_Valerie_Headshot.png' width={150} height={230} alt='Valerie Miller' layout='responsive' />
                     </div>
                     <article className={styles.aboutArticle}>
                         <p>I am an occupational therapist with a recognized specialty in Pediatrics from the National Board for the Certification of Occupational Therapy.</p>
