@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+.aboutContainer {
+  padding: 20px;
+}
+
+.aboutHeader {
+  padding: 10px 0;
+}
+
+.boxshadow {
+  -webkit-box-shadow: 2px 1px 15px 5px #dfdfdf;
+          box-shadow: 2px 1px 15px 5px #dfdfdf;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.aboutArticle {
+  padding: 10px 5px;
+  display: inline-block;
+}
+
+.imageBox {
+  display: block;
+  width: 100%;
+  padding: 0 15px;
+}
+
+@media screen and (min-width: 450px) {
+  .contentBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .imageBox {
+    min-width: 150px;
+    height: 230px;
+  }
+}
+/*# sourceMappingURL=About.module.css.map */

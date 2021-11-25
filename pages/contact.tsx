@@ -27,6 +27,8 @@ const Contact: NextPage = () => {
 
     const formSubmitHandler: SubmitHandler<FormSubmit> = (data: FormSubmit, e: SyntheticEvent) => {
         e.preventDefault()
+        setSubmitted(true)
+        console.log(submitted)
         console.log(data)
 
         // axios.post('/api/contact/', data)
@@ -40,9 +42,9 @@ const Contact: NextPage = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
                     <div>
-                        <FormInput {...{ name: 'name', multiline: false }} />
-                        <FormInput {...{ name: 'email', multiline: false }} />
-                        <FormInput {...{ name: 'message', multiline: true, rows: 5 }} />
+                        <FormInput {...{ label: 'name', multiline: false }} />
+                        <FormInput {...{ label: 'email', multiline: false }} />
+                        <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
 
                     <div>

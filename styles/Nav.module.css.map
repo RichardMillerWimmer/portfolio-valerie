@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,sFAAI;AACZ,OAAO,CAAC,4EAAI;ADCZ,AAAA,IAAI,CAAC;EACH,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "Nav.module.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "Nav.module.css"
+}

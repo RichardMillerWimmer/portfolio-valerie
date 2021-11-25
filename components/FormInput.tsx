@@ -3,18 +3,24 @@ import React from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 
 type InputProps = {
-    name: string,
+    label: string,
     multiline: boolean,
     rows?: number
 }
 
 const FormInput: React.FC<InputProps> = (props: InputProps) => {
-    const { name, multiline, rows } = props
+    const { label, multiline, rows } = props
 
     const { control, formState: { errors } } = useFormContext()
+
+    const dynamicErrorObj = Object.values(errors)[0]
+
+    console.log(dynamicErrorObj)
+    // console.log(errors)
+
     return (
         <div>
-            <Controller name={name} control={control} defaultValue='' render={({ field }) => (<TextField multiline={multiline} rows={rows} {...field} label={name} variant='outlined' error={!!errors.name} helperText={errors.name ? errors.name?.message : ''} />)} />
+            <Controller name={label} control={control} defaultValue='' render={({ field }) => (<TextField multiline={multiline} rows={rows} {...field} label={label} variant='outlined' error={!!dynamicErrorObj} helperText={dynamicErrorObj ? dynamicErrorObj?.message : ''} />)} />
         </div>
     )
 }

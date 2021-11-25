@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+.heroContainer {
+  position: relative;
+}
+
+.heroTextBox {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background-color: #ffffff50;
+  padding: 15px;
+  text-align: center;
+}
+
+.heroTextBox::before, .heroTextBox::after {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  bottom: 0.6em;
+  left: 0.6em;
+  right: 0.6em;
+  opacity: 1;
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.heroTextBox::before {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+}
+
+.heroTextBox::after {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+}
+
+.heroTextBox::before {
+  -webkit-transform: scale(1.05, 1);
+          transform: scale(1.05, 1);
+}
+
+.heroTextBox:after {
+  -webkit-transform: scale(1, 1.1);
+          transform: scale(1, 1.1);
+}
+
+@media screen and (min-width: 450px) {
+  .heroTextBox {
+    padding: 25px;
+  }
+  .heroTextBox::before, .heroTextBox::after {
+    top: 0.9em;
+    bottom: 0.9em;
+    left: 0.9em;
+    right: 0.9em;
+  }
+}
+/*# sourceMappingURL=Hero.module.css.map */
