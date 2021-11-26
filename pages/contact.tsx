@@ -27,14 +27,20 @@ const Contact: NextPage = () => {
 
     const formSubmitHandler: SubmitHandler<FormSubmit> = (data: FormSubmit, e: SyntheticEvent) => {
         e.preventDefault()
-        setSubmitted(true)
-        console.log(submitted)
-        console.log(data)
 
-        // axios.post('/api/contact/', data)
-        //     .then(() => {
-        //     })
-        //     .catch((err) => console.log(err))
+        axios.post('/api/contact/', data)
+            .then(() => {
+                setSubmitted(true)
+                console.log(data)
+
+            })
+            .catch((err) => console.log(err))
+    }
+
+    if (submitted) {
+        return (
+            <div>Thank you. I will be in contact with you as soon as I can.</div>
+        )
     }
 
     return (
