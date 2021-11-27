@@ -31,7 +31,7 @@ const Contact: NextPage = () => {
         axios.post('/api/contact/', data)
             .then(() => {
                 setSubmitted(true)
-                console.log(data)
+                // console.log(data)
 
             })
             .catch((err) => console.log(err))

@@ -1,3 +1,5 @@
+"use strict"
+
 require('dotenv').config()
 
 const FROM_EMAIL = process.env.FROM_EMAIL
@@ -6,36 +8,39 @@ const TO_EMAIL = process.env.TO_EMAIL
 
 export default async function (req, res) {
 
-    console.log(req.body)
+    // console.log(req.body)
 
     let nodemailer = require('nodemailer')
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: FROM_EMAIL,
             pass: PASSWORD,
         }
     })
+    // console.log(nodemailer)
+    // console.log(transporter)
 
-    let mailData = {
+    let mailOptions = {
         from: FROM_EMAIL,
         to: TO_EMAIL,
         subject: `Message From ${req.body.name}`,
         text: `${req.body.message} - return email: ${req.body.email}`,
-        html: <div>{req.body.message}</div>
+        html: `<div>${req.body.message}</div>`
     }
 
-    let info = await transporter.sendMail(mailData, (err, info) => {
-        console.log('sendMail')
+    // console.log(mailData)
+
+    await transporter.sendMail(mailOptions, (err, info) => {
+        // console.log('sendMail')
         if (err) {
-            console.log('Error', err)
+            // console.log('Error', err)
             res.send(500)
         }
         else {
-            console.log('Else', info)
-            res.send(200)
+            // console.log('Info', info)
         }
     })
-
+    res.send(200)
 
 }
