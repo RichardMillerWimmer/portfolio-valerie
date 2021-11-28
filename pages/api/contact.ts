@@ -13,8 +13,8 @@ const TO_EMAIL = process.env.TO_EMAIL
 export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     const formData: FormSubmit = req.body
-    formData.token = ''
-    console.log(req.body)
+    // formData.token = ''
+    // console.log(req.body)
 
     const validateReCaptchaToken = async (token: string): Promise<Boolean> => {
         const secret = process.env.RECAPTCH_SECRET_KEY
@@ -25,7 +25,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     const validate = await validateReCaptchaToken(req.body.token)
     if(!validate){
-        res.send(400)
+        res.status(400).send("error")
         return
     }
 

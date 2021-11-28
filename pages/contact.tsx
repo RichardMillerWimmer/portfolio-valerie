@@ -32,20 +32,23 @@ const Contact: NextPage = () => {
         e.preventDefault()
 
         const token = await reCaptchaRef.current.executeAsync()
-        console.log(token)
+        // console.log(token)
 
         data = { ...data, token: token }
-        console.log(data)
+        // console.log(data)
 
         reCaptchaRef.current.reset()
 
         axios.post('/api/contact/', data)
-            .then(() => {
+            .then((res) => {
+                // console.log(res)
                 setSubmitted(true)
-                // console.log(data)
 
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                // console.log(err)
+                // setSubmitted(true)
+            })
     }
 
     if (submitted) {
