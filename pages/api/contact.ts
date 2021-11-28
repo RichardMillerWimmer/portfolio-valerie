@@ -13,18 +13,19 @@ const TO_EMAIL = process.env.TO_EMAIL
 export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     const formData: FormSubmit = req.body
-    // console.log(req.body)
+    formData.token = ''
+    console.log(req.body)
 
-    const validateReCaptchaToken = async (): Promise<Boolean> => {
+    const validateReCaptchaToken = async (token: string): Promise<Boolean> => {
         const secret = process.env.RECAPTCH_SECRET_KEY
-        const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${formData.token}`, {method: 'POST'})
+        const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`, {method: 'POST'})
         const data = await response.json()
         return data.success
     }
 
-    const validate = validateReCaptchaToken()
+    const validate = await validateReCaptchaToken(req.body.token)
     if(!validate){
-        res.status(400)
+        res.send(400)
         return
     }
 
