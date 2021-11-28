@@ -12,7 +12,7 @@ export type FormSubmit = {
     name: string,
     email: string,
     message: string,
-    token?: string
+    token: string
 }
 
 const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
@@ -33,7 +33,7 @@ const Contact: NextPage = () => {
 
         const token = await reCaptchaRef.current.executeAsync()
         console.log(token)
-        
+
         data = { ...data, token: token }
         console.log(data)
 
