@@ -1,4 +1,7 @@
 "use strict"
+import type { NextApiRequest, NextApiResponse } from 'next'
+import FormInput from '../../components/FormInput'
+
 
 require('dotenv').config()
 
@@ -6,7 +9,7 @@ const FROM_EMAIL = process.env.FROM_EMAIL
 const PASSWORD = process.env.PASSWORD
 const TO_EMAIL = process.env.TO_EMAIL
 
-export default async function (req, res) {
+export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     // console.log(req.body)
 

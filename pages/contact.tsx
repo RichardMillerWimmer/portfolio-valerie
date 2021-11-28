@@ -8,7 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 import FormInput from '../components/FormInput'
 import ReCAPTCHA from 'react-google-recaptcha'
 
-type FormSubmit = {
+export type FormSubmit = {
     name: string,
     email: string,
     message: string,
