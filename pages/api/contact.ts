@@ -43,7 +43,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     let mailOptions = {
         from: FROM_EMAIL,
         to: TO_EMAIL,
-        subject: `Message From ${req.body.name}`,
+        subject: `${req.body.subject}`,
         text: `${req.body.message} - return email: ${req.body.email}`,
         html: `<div>${req.body.message}</div>`
     }

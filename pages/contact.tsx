@@ -11,6 +11,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 export type FormSubmit = {
     name: string,
     email: string,
+    subject: string,
     message: string,
     token: string
 }
@@ -18,6 +19,7 @@ export type FormSubmit = {
 const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
     name: yup.string().max(20).required(),
     email: yup.string().max(30).email().required(),
+    subject: yup.string().max(30).required(),
     message: yup.string().max(250).required(),
     token: yup.string()
 })
@@ -64,6 +66,7 @@ const Contact: NextPage = () => {
                     <div>
                         <FormInput {...{ label: 'name', multiline: false }} />
                         <FormInput {...{ label: 'email', multiline: false }} />
+                        <FormInput {...{ label: 'subject', multiline: false }} />
                         <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
 
