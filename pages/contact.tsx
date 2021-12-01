@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 
 import * as yup from 'yup'
 import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import FormInput from '../components/FormInput'
 import ReCAPTCHA from 'react-google-recaptcha'
 
@@ -17,20 +17,20 @@ export type FormSubmit = {
 }
 
 const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
-    name: yup.string().max(20).required(),
-    email: yup.string().max(30).email().required(),
-    subject: yup.string().max(30).required(),
-    message: yup.string().max(250).required(),
-    token: yup.string()
+    name: yup.string().max(20).defined(),
+    email: yup.string().max(30).email().defined(),
+    subject: yup.string().max(30).defined(),
+    message: yup.string().max(250).defined(),
+    token: yup.string().default('').defined()
 })
 
 const Contact: NextPage = () => {
     const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
     const [submitted, setSubmitted] = useState<boolean>(false)
-    const reCaptchaRef = useRef<ReCAPTCHA>()
+    const reCaptchaRef = useRef<ReCAPTCHA | null>(null)
 
 
-    const formSubmitHandler: SubmitHandler<FormSubmit> = async (data: FormSubmit, e: SyntheticEvent) => {
+    const formSubmitHandler: SubmitHandler<FormSubmit> = async (data: FormSubmit, e: SyntheticEvent): Promise<void> => {
         e.preventDefault()
 
         const token = await reCaptchaRef.current.executeAsync()
@@ -43,12 +43,12 @@ const Contact: NextPage = () => {
 
         axios.post('/api/contact/', data)
             .then((res) => {
-                // console.log(res)
+                console.log(res)
                 setSubmitted(true)
 
             })
             .catch((err) => {
-                // console.log(err)
+                console.log(err)
                 // setSubmitted(true)
             })
     }
