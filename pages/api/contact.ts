@@ -7,10 +7,10 @@ import { MailOptions } from 'nodemailer/lib/sendmail-transport'
 
 import type { FormSubmit } from '../contact'
 
-
 const FROM_EMAIL = process.env.FROM_EMAIL
 const PASSWORD = process.env.PASSWORD
 const TO_EMAIL = process.env.TO_EMAIL
+
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
 

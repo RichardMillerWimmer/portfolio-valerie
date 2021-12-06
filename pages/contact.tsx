@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useRef, useState } from 'react'
+import React, { BaseSyntheticEvent, useRef, useState } from 'react'
 import axios from 'axios'
 import { NextPage } from 'next'
 
@@ -27,19 +27,20 @@ const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
 const Contact: NextPage = () => {
     const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
     const [submitted, setSubmitted] = useState<boolean>(false)
-    const reCaptchaRef = useRef<ReCAPTCHA | null>(null)
+    const reCaptchaRef = useRef<ReCAPTCHA | null | undefined>(null)
 
 
-    const formSubmitHandler: SubmitHandler<FormSubmit> = async (data: FormSubmit, e: SyntheticEvent): Promise<void> => {
-        e.preventDefault()
+    const formSubmitHandler: SubmitHandler<FormSubmit> = async (data: FormSubmit): Promise<void> => {
 
-        const token = await reCaptchaRef.current.executeAsync()
+        let token = await reCaptchaRef.current?.executeAsync()
+
         // console.log(token)
-
-        data = { ...data, token: token }
+        if (token) {
+            data = { ...data, token: token }
+        }
         // console.log(data)
 
-        reCaptchaRef.current.reset()
+        reCaptchaRef.current?.reset()
 
         axios.post('/api/contact/', data)
             .then((res) => {
@@ -62,7 +63,10 @@ const Contact: NextPage = () => {
     return (
         <>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
+                <form onSubmit={(e: BaseSyntheticEvent) => {
+                    e.preventDefault()
+                    methods.handleSubmit(formSubmitHandler)
+                }}>
                     <div>
                         <FormInput {...{ label: 'name', multiline: false }} />
                         <FormInput {...{ label: 'email', multiline: false }} />
