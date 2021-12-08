@@ -27,7 +27,7 @@ const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
 const Contact: NextPage = () => {
     const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
     const [submitted, setSubmitted] = useState<boolean>(false)
-    const reCaptchaRef = useRef<ReCAPTCHA | null | undefined>(null)
+    const reCaptchaRef = useRef<ReCAPTCHA>(null)
 
 
     const formSubmitHandler: SubmitHandler<FormSubmit> = async (data: FormSubmit): Promise<void> => {
@@ -78,7 +78,7 @@ const Contact: NextPage = () => {
                         <input type='submit'></input>
                     </div>
                 </form>
-                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} size='invisible' ref={reCaptchaRef} />
+                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size='invisible' ref={reCaptchaRef} />
             </FormProvider>
         </>
     )
