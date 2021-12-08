@@ -13,8 +13,8 @@
   @include boxshadow;
 }
 
-.contentBox {
-}
+// .contentBox {
+// }
 
 .aboutArticle {
   padding: 10px 5px;
@@ -22,8 +22,13 @@
 }
 
 .imageBox {
-  display: block;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   width: 100%;
+  min-width: 150px;
+  max-height: 230px;
   padding: 0 15px;
 }
 
@@ -35,9 +40,14 @@
   .imageBox {
     // float: left;
     min-width: 150px;
-    height: 230px;
+    max-height: 230px;
   }
 }
 
 @media screen and (min-width: $bp-tablet) {
+  .imageBox {
+    // float: left;
+    max-width: 275px;
+    max-height: 300px;
+  }
 }
