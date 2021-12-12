@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '../styles/Hero.module.scss'
 
-const Hero = () => {
+const Hero: React.FC = () => {
     return (
         <section>
             <div className={styles.heroContainer}>
