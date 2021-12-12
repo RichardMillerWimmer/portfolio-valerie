@@ -2,8 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/About.module.scss';
 import { NextPage } from 'next';
+import { client } from './index'
 
-const About: NextPage = () => {
+type AboutType = {
+    about: string
+}
+
+const About: NextPage<AboutType> = ({ about }) => {
+    console.log(about)
     return (
         <section className={styles.aboutContainer}>
             <div className={styles.boxshadow}>
@@ -13,13 +19,7 @@ const About: NextPage = () => {
                         <Image src='/Miller_Valerie_Headshot.png' alt='Valerie Miller Head Shot' layout='fill' />
                     </div>
                     <article className={styles.aboutArticle}>
-                        <p>I am an occupational therapist with a recognized specialty in Pediatrics from the National Board for the Certification of Occupational Therapy.</p>
-                        <br />
-                        <p>Currently, I am a Ph.D. Candidate in Rehabilitation Sciences at the University of Kentucky. My research focuses on increasing community inclusion for individuals with intellectual and developmental disabilities.</p>
-                        <br />
-                        <p>As an occupational therapist, my career has taken me to a variety of pediatric settings, including Cincinnati Children’s Hospital, where I completed an American Occupational Therapy Association Fellowship in pediatrics and graduated from the Leadership Education in Neurodevelopmental and Related Disabilities (LEND) program.  recent project I loved contributing to as a collaborator was the “Access for All” Project at the Cincinnati Zoo which, aims to make their experience more accessible to individuals with disabilities and their families.</p>
-                        <br />
-                        <p>I am currently on faculty in the Master of Occupational Therapy Program at the University of Cincinnati.</p>
+                        {about}
                     </article>
                 </div>
             </div>
@@ -28,3 +28,14 @@ const About: NextPage = () => {
 }
 
 export default About
+
+export async function getStaticProps() {
+
+    const res = await client.getEntries({ content_type: 'about' })
+
+    return {
+        props: {
+            about: res
+        }
+    }
+}
