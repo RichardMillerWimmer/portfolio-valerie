@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import styles from '../styles/About.module.scss';
 import { NextPage } from 'next';
 import { client } from './index'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import DOCUMENT from "contentful-management/dist/typings/entities"
 
 type AboutType = {
-    about: string
+    about: typeof DOCUMENT
 }
 
 const About: NextPage<AboutType> = ({ about }) => {
@@ -19,7 +21,7 @@ const About: NextPage<AboutType> = ({ about }) => {
                         <Image src='/Miller_Valerie_Headshot.png' alt='Valerie Miller Head Shot' layout='fill' />
                     </div>
                     <article className={styles.aboutArticle}>
-                        {about}
+                        {documentToReactComponents(about)}
                     </article>
                 </div>
             </div>
@@ -35,7 +37,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            about: res
+            about: res.items[0].fields
         }
     }
 }
