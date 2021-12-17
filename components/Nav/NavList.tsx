@@ -4,7 +4,11 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import styles from '../../styles/NavList.module.scss';
 
-const Ul = styled.ul`
+type StyledUIType = {
+    open: boolean
+}
+
+const Ul = styled.ul<StyledUIType>`
 z-index: 1;
 list-style: none;
 display: flex;
@@ -33,7 +37,7 @@ li {
 
 interface NavProps {
     open: boolean,
-    setOpen
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const NavList: React.FC<NavProps> = ({ open, setOpen }: NavProps) => {
