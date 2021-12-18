@@ -1,16 +1,16 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/About.module.scss';
 import { NextPage } from 'next';
 import { client } from './index'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import DOCUMENT from "contentful-management/dist/typings/entities"
+// import { EntryCollection } from 'contentful-management/dist/typings/entities/entry'
 
 type AboutType = {
-    about: typeof DOCUMENT
+    about: any
 }
 
-const About: NextPage<AboutType> = ({ about }) => {
+const About: NextPage<AboutType> = ({ about }: AboutType) => {
     console.log(about)
     return (
         <section className={styles.aboutContainer}>
@@ -21,7 +21,7 @@ const About: NextPage<AboutType> = ({ about }) => {
                         <Image src='/Miller_Valerie_Headshot.png' alt='Valerie Miller Head Shot' layout='fill' />
                     </div>
                     <article className={styles.aboutArticle}>
-                        {documentToReactComponents(about)}
+                        {documentToReactComponents(about.about)}
                     </article>
                 </div>
             </div>
