@@ -5,14 +5,16 @@ import { ProjectType } from './index'
 
 const Project: NextPage<ProjectType> = (props: ProjectType): JSX.Element => {
 
+    const { title, date, authors, journal, link, image } = props
 
     return (
         <article>
-            <h4>{props.title}</h4>
-            <p>{props.date}</p>
-            <p>{props.authors}</p>
-            <p>{props.journal}</p>
-            {/* image/Link */}
+            <h4>{title}</h4>
+            <p>{date}</p>
+            <p>{authors}</p>
+            <p>{journal}</p>
+            <p>{link}</p>
+            <p>{image}</p>
         </article>
     )
 }
