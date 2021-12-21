@@ -1,5 +1,5 @@
-import { NextPage } from 'next'
 import React from 'react'
+import { NextPage } from 'next'
 import Project from './[id]'
 import styles from '../../styles/Projects.module.scss';
 
