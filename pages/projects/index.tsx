@@ -8,6 +8,7 @@ type Author = string
 export type ProjectType = {
     id: number,
     title: string,
+    body: string,
     date: string,
     authors: Author[],
     journal: string,
@@ -20,6 +21,7 @@ const testData: ProjectType[] = [
     {
         id: 0,
         title: 'test title 1',
+        body: 'test body 1',
         date: 'some date 1',
         authors: ['Val'],
         journal: 'journal 1',
@@ -30,6 +32,7 @@ const testData: ProjectType[] = [
     {
         id: 1,
         title: 'test title 2',
+        body: 'test body 1',
         date: 'some date 2',
         authors: ['Val'],
         journal: 'journal 2',
