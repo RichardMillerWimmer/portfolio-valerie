@@ -1,12 +1,15 @@
 import React, { BaseSyntheticEvent, useRef, useState } from 'react'
 import axios from 'axios'
 import { NextPage } from 'next'
+import Link from 'next/link'
+import styles from '../styles/Contact.module.scss'
 
 import * as yup from 'yup'
 import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import FormInput from '../components/FormInput'
 import ReCAPTCHA from 'react-google-recaptcha'
+import { Button } from '@material-ui/core'
 
 export type FormSubmit = {
     name: string,
@@ -58,7 +61,9 @@ const Contact: NextPage = () => {
 
     if (submitted) {
         return (
-            <div>Thank you. I will be in contact with you as soon as I can.</div>
+            <div className={styles.submitted}>
+                <h4>Thank you, <br /> I will be in contact with you as soon as I can.</h4>
+                <Link href='/'><a>Home</a></Link></div>
         )
     }
 
@@ -72,9 +77,8 @@ const Contact: NextPage = () => {
                         <FormInput {...{ label: 'subject', multiline: false }} />
                         <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
-
                     <div>
-                        <input type='submit'></input>
+                        <Button variant='outlined' type='submit'>Send</Button>
                     </div>
                 </form>
                 <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size='invisible' ref={reCaptchaRef} />

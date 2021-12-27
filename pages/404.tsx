@@ -16,7 +16,7 @@ const NotFound: NextPage = () => {
         <div className='not-found'>
             <h2>404</h2>
             <h3>That page cannot be found</h3>
-            <p>Redirecting to the <Link href='/'><a>Homepage</a></Link>...</p>
+            <p>Redirecting to the <Link href='/'><a>Home</a></Link>...</p>
         </div>
     )
 }
