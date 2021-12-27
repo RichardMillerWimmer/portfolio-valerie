@@ -14,10 +14,11 @@ const FormInput: React.FC<InputProps> = (props: InputProps) => {
 
     const { control, formState: { errors } } = useFormContext()
 
-    let dynamicErrorObj
+    let dynamicErrorObj: typeof errors
 
     if (errors && Object.keys(errors)[0] === label) {
         dynamicErrorObj = Object.values(errors)[0]
+        console.log(dynamicErrorObj)
     }
 
     return (
