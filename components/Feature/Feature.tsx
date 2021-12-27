@@ -1,13 +1,14 @@
 import React from 'react'
-import Image from 'next/image'
-import FeatureType from './FeatureContainer'
+// import Image from 'next/image'
+import { FeatureType } from './FeatureContainer'
 
 const Feature: React.FC<FeatureType> = (props: FeatureType): JSX.Element => {
+    console.log(props)
+
     return (
         <div>
-            <h4>Title</h4>
-            <p>Body</p>
-            {/* <Image src={''} alt='' width={0} height={0}/> */}
+            <h4>{props.title}</h4>
+            <p>{props.body}</p>
         </div>
     )
 }

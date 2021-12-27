@@ -27,8 +27,9 @@ const FeatureContainer: React.FC = () => {
 
     return (
         <section>
-            {/* <Feature /> */}
-            {/* <Feature /> */}
+            {testData.map((elem) => (
+                <Feature {...elem} key={elem.id} />
+            ))}
         </section>
     )
 }
