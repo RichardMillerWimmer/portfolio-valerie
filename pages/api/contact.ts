@@ -38,8 +38,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
             pass: PASSWORD,
         }
     })
-    // console.log(nodemailer)
-    // console.log(transporter)
 
     let mailOptions: MailOptions = {
         from: FROM_EMAIL,
@@ -49,12 +47,10 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         html: `<div>${message}</div>`
     }
 
-    // console.log(mailData)
-
     await transporter.sendMail(mailOptions, (err: SentMessageInfo, info: SentMessageInfo) => {
-        // console.log('sendMail')
+        console.log('sendMail')
         if (err) {
-            // console.log('Error', err)
+            console.log('Error', err)
             res.send(500)
         }
         else {

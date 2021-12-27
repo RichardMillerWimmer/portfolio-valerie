@@ -6,7 +6,7 @@ import * as yup from 'yup'
 import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import FormInput from '../components/FormInput'
-// import ReCAPTCHA from 'react-google-recaptcha'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export type FormSubmit = {
     name: string,
@@ -27,23 +27,22 @@ const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
 const Contact: NextPage = () => {
     const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
     const [submitted, setSubmitted] = useState<boolean>(false)
-    // const reCaptchaRef = useRef<ReCAPTCHA>(null)
+    const reCaptchaRef = useRef<ReCAPTCHA>(null)
 
 
-    const formSubmitHandler: SubmitHandler<FormSubmit> = async (data: FormSubmit): Promise<void> => {
+    const formSubmitHandler: SubmitHandler<FormSubmit & BaseSyntheticEvent> = async (data: FormSubmit, event?: BaseSyntheticEvent): Promise<void> => {
 
-    
-        console.log('submit handler')
+        if (event) {
+            event.preventDefault()
+        }
 
-        // let token = await reCaptchaRef.current?.executeAsync()
+        let token = await reCaptchaRef.current?.executeAsync()
 
-        // console.log(token)
-        // if (token) {
-        //     data = { ...data, token: token }
-        // }
-        console.log(data)
+        if (token) {
+            data = { ...data, token: token }
+        }
 
-        // reCaptchaRef.current?.reset()
+        reCaptchaRef.current?.reset()
 
         axios.post('/api/contact/', data)
             .then((res) => {
@@ -66,11 +65,7 @@ const Contact: NextPage = () => {
     return (
         <>
             <FormProvider {...methods}>
-                <form onSubmit={(e: BaseSyntheticEvent) => {
-                    e.preventDefault()
-                    console.log('onSubmit')
-                    methods.handleSubmit(formSubmitHandler)
-                }}>
+                <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
                     <div>
                         <FormInput {...{ label: 'name', multiline: false }} />
                         <FormInput {...{ label: 'email', multiline: false }} />
@@ -82,7 +77,7 @@ const Contact: NextPage = () => {
                         <input type='submit'></input>
                     </div>
                 </form>
-                {/* <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size='invisible' ref={reCaptchaRef} /> */}
+                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size='invisible' ref={reCaptchaRef} />
             </FormProvider>
         </>
     )
