@@ -3,6 +3,7 @@ import axios from 'axios'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import styles from '../styles/Contact.module.scss'
+import { NextRouter, useRouter } from 'next/router'
 
 import * as yup from 'yup'
 import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
@@ -31,7 +32,13 @@ const Contact: NextPage = () => {
     const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
     const [submitted, setSubmitted] = useState<boolean>(false)
     const reCaptchaRef = useRef<ReCAPTCHA>(null)
+    const router: NextRouter = useRouter()
 
+    const homeRedirect = (): void => {
+        setTimeout((): void => {
+            router.push('/')
+        }, 4000)
+    }
 
     const formSubmitHandler: SubmitHandler<FormSubmit & BaseSyntheticEvent> = async (data: FormSubmit, event?: BaseSyntheticEvent): Promise<void> => {
 
@@ -51,7 +58,7 @@ const Contact: NextPage = () => {
             .then((res) => {
                 console.log(res)
                 setSubmitted(true)
-
+                homeRedirect()
             })
             .catch((err) => {
                 console.log(err)
@@ -63,7 +70,7 @@ const Contact: NextPage = () => {
         return (
             <div className={styles.submitted}>
                 <h4>Thank you, <br /> I will be in contact with you as soon as I can.</h4>
-                <Link href='/'><a>Home</a></Link>
+                <h4 className={styles.redirect}>Redirecting to <Link href='/'><a>Home</a></Link>...</h4>
             </div>
         )
     }

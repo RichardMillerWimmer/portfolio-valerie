@@ -19,6 +19,13 @@
   padding: 10px;
 }
 
+.redirect {
+  padding: 20px;
+}
+.redirect a {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: $bp-mobile) {
   .form {
     width: 370px;
