@@ -1,6 +1,7 @@
 import { TextField } from '@material-ui/core'
 import React from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
+import styles from '../styles/Contact.module.scss'
 
 
 type InputProps = {
@@ -22,8 +23,8 @@ const FormInput: React.FC<InputProps> = (props: InputProps) => {
     }
 
     return (
-        <div>
-            <Controller name={label} control={control} defaultValue='' render={({ field }) => (<TextField multiline={multiline} rows={rows} {...field} label={label} variant='outlined' error={!!dynamicErrorObj} helperText={dynamicErrorObj ? dynamicErrorObj?.message : ''} />)} />
+        <div className={styles.formInput}>
+            <Controller name={label} control={control} defaultValue='' render={({ field }) => (<TextField fullWidth multiline={multiline} rows={rows} {...field} label={label} variant='outlined' error={!!dynamicErrorObj} helperText={dynamicErrorObj ? dynamicErrorObj?.message : ''} />)} />
         </div>
     )
 }

@@ -63,21 +63,23 @@ const Contact: NextPage = () => {
         return (
             <div className={styles.submitted}>
                 <h4>Thank you, <br /> I will be in contact with you as soon as I can.</h4>
-                <Link href='/'><a>Home</a></Link></div>
+                <Link href='/'><a>Home</a></Link>
+            </div>
         )
     }
 
     return (
         <>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
+                <form className={styles.form} onSubmit={methods.handleSubmit(formSubmitHandler)}>
+                    <h2 className='visualHidden'>Contact</h2>
                     <div>
                         <FormInput {...{ label: 'name', multiline: false }} />
                         <FormInput {...{ label: 'email', multiline: false }} />
                         <FormInput {...{ label: 'subject', multiline: false }} />
                         <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
-                    <div>
+                    <div className={styles.formSubmit}>
                         <Button variant='outlined' type='submit'>Send</Button>
                     </div>
                 </form>
