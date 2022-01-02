@@ -17,10 +17,13 @@
 
 .buttonContainer {
   justify-content: center;
-  margin: 10px;
+  margin: 10px 0;
   .resumeButton {
-    margin: 0 5px;
+    margin: 15px 0;
     display: block;
+  }
+  .materialIcon {
+    vertical-align: middle;
   }
 }
 

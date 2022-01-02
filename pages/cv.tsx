@@ -17,21 +17,21 @@ const Cv: NextPage = () => {
           </p>
           <br />
           <p>
-            If you have any questions or want to talk further please feel free to <Link href='/contact'><a>contact</a></Link> me.
+            If you have any questions or want to talk further please feel free to <Link href='/contact'><a className='inTextLink'>contact</a></Link> me.
           </p>
           <br />
           <div className={styles.buttonContainer}>
             <Button className={styles.resumeButton} variant='outlined'><a
               href="https://docs.google.com/document/d/1_gpG0nhrPrHhr04xQLNj1Yf3b2En5tP3-XkwiF19gP0/export?format=pdf"
             >
-              download <FileDownloadIcon />
+              download <FileDownloadIcon className={styles.materialIcon} />
             </a>
             </Button>
             <Button className={styles.resumeButton} variant='outlined'>
               <a target='_blank' rel='noopener noreferrer'
                 href="https://docs.google.com/document/d/1_gpG0nhrPrHhr04xQLNj1Yf3b2En5tP3-XkwiF19gP0"
               >
-                google <ArrowForwardIcon />
+                google <ArrowForwardIcon className={styles.materialIcon} />
               </a>
             </Button>
           </div>

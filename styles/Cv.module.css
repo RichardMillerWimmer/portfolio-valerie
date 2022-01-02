@@ -21,12 +21,16 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .buttonContainer .resumeButton {
-  margin: 0 5px;
+  margin: 15px 0;
   display: block;
+}
+
+.buttonContainer .materialIcon {
+  vertical-align: middle;
 }
 
 @media screen and (min-width: 450px) {

@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixin";
 
 html,
 body {
@@ -70,6 +71,11 @@ li {
   }
   h4 {
     font-size: 1.4rem;
+  }
+
+  .inTextLink {
+    text-decoration: underline;
+    @include hoverBounce;
   }
 
   .visualHidden {

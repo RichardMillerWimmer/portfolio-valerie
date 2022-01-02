@@ -71,7 +71,7 @@ const Contact: NextPage = () => {
         return (
             <div className={styles.submitted}>
                 <h4>Thank you, <br /> I will be in contact with you as soon as I can.</h4>
-                <h4 className={styles.redirect}>Redirecting to <Link href='/'><a>Home</a></Link>...</h4>
+                <h4 className={styles.redirect}>Redirecting to <Link href='/'><a className='inTextLink'>Home</a></Link>...</h4>
             </div>
         )
     }
@@ -88,7 +88,7 @@ const Contact: NextPage = () => {
                         <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
                     <div className={styles.formSubmit}>
-                        <Button variant='outlined' type='submit'>Send<SendIcon /></Button>
+                        <Button variant='outlined' type='submit'>Send<SendIcon className={styles.materialIcon} /></Button>
                     </div>
                 </form>
                 <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size='invisible' ref={reCaptchaRef} />
