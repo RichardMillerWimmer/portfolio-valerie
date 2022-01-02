@@ -16,11 +16,11 @@
 }
 
 .buttonContainer {
-  display: flex;
   justify-content: center;
   margin: 10px;
   .resumeButton {
     margin: 0 5px;
+    display: block;
   }
 }
 
