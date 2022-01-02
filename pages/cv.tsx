@@ -22,14 +22,14 @@ const Cv: NextPage = () => {
           <br />
           <div className={styles.buttonContainer}>
             <Button className={styles.resumeButton} variant='outlined'><a
-              href="https://docs.google.com/document/d/1_gpG0nhrPrHhr04xQLNj1Yf3b2En5tP3-XkwiF19gP0/export?format=pdf"
+              href="https://docs.google.com/document/d/1kXB1r5C5HdI9CAevKVj7Ve1Uwo67iALS/export?format=pdf"
             >
               download <FileDownloadIcon className={styles.materialIcon} />
             </a>
             </Button>
             <Button className={styles.resumeButton} variant='outlined'>
               <a target='_blank' rel='noopener noreferrer'
-                href="https://docs.google.com/document/d/1_gpG0nhrPrHhr04xQLNj1Yf3b2En5tP3-XkwiF19gP0"
+                href="https://docs.google.com/document/d/1kXB1r5C5HdI9CAevKVj7Ve1Uwo67iALS/copy"
               >
                 google <ArrowForwardIcon className={styles.materialIcon} />
               </a>
