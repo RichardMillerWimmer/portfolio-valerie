@@ -30,7 +30,7 @@ const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
 })
 
 const Contact: NextPage = () => {
-    const methods = useForm<FormSubmit>({ resolver: yupResolver(schema) })
+    const methods = useForm<FormSubmit>({ mode: 'onBlur', reValidateMode: "onBlur", resolver: yupResolver(schema) })
     const [submitted, setSubmitted] = useState<boolean>(false)
     const reCaptchaRef = useRef<ReCAPTCHA>(null)
     const router: NextRouter = useRouter()
@@ -41,8 +41,8 @@ const Contact: NextPage = () => {
         }, 4000)
     }
 
-    // console.log(methods)
-    // console.log(methods.formState.isValid)
+    console.log('valid', methods.formState.isValid)
+    console.log('dirty', methods.formState.isDirty)
 
     const formSubmitHandler: SubmitHandler<FormSubmit & BaseSyntheticEvent> = async (data: FormSubmit, event?: BaseSyntheticEvent): Promise<void> => {
 
@@ -85,14 +85,15 @@ const Contact: NextPage = () => {
                 <form className={styles.form} onSubmit={methods.handleSubmit(formSubmitHandler)}>
                     <h2 className='visualHidden'>Contact</h2>
                     <div>
-                        <FormInput {...{ label: 'name', multiline: false }} />
-                        <FormInput {...{ label: 'email', multiline: false }} />
-                        <FormInput {...{ label: 'subject', multiline: false }} />
-                        <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
+                        <FormInput {...methods.register('name')} {...{ label: 'name', multiline: false }} />
+                        <FormInput {...methods.register('email')} {...{ label: 'email', multiline: false }} />
+                        <FormInput {...methods.register('subject')} {...{ label: 'subject', multiline: false }} />
+                        <FormInput {...methods.register('message')} {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
                     <div className={styles.formSubmit}>
-                        {/* {methods.formState.isValid ? '' : <Button variant='outlined' type='submit'>Send<SendIcon className={styles.materialIcon} /></Button>} */}
-                        <Button variant='outlined' type='submit'>Send<SendIcon className={styles.materialIcon} /></Button>
+                        {/* {methods.formState.isValid && methods.formState.isDirty ? <Button variant='outlined' type='submit'>Send<SendIcon className={styles.materialIcon} /></Button> : ''} */}
+                        {/* <Button variant='outlined' type='submit' disabled={!methods.formState.isValid}>Send<SendIcon className={styles.materialIcon} /></Button> */}
+                        <Button variant='outlined' type='submit' >Send<SendIcon className={styles.materialIcon} /></Button>
 
                     </div>
                 </form>

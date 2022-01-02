@@ -21,11 +21,11 @@ const FormInput: React.FC<InputProps> = (props: InputProps) => {
         dynamicErrorObj = Object.values(errors)[0]
         console.log(dynamicErrorObj)
     }
-    console.log(errors)
+    console.log('errors object', errors)
 
     return (
         <div className={styles.formInput}>
-            <Controller name={label} control={control} defaultValue='' render={({ field }) => (<TextField fullWidth multiline={multiline} rows={rows} {...field} label={label} variant='outlined' error={!!dynamicErrorObj} helperText={dynamicErrorObj ? dynamicErrorObj?.message : ''} />)} />
+            <Controller name={label} control={control} defaultValue='' render={({ field }) => (<TextField fullWidth multiline={multiline} rows={rows} {...field} label={label} variant='outlined' error={!!dynamicErrorObj} helperText={dynamicErrorObj ? dynamicErrorObj.message : ''} />)} />
         </div>
     )
 }
