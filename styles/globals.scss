@@ -75,7 +75,43 @@ li {
 
   .inTextLink {
     text-decoration: underline;
-    @include hoverBounce;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translate(0px, 0px);
+    }
+
+    30% {
+      transform: translate(0px, -10px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    0% {
+      transform: translate(0px, 0px);
+    }
+
+    30% {
+      transform: translate(0px, -10px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .bounce {
+    position: relative;
+    display: inline-block;
+  }
+
+  .bounce:hover {
+    animation: bounce 1.5s infinite;
+    -webkit-animation: bounce 1.5s infinite;
   }
 
   .visualHidden {

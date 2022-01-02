@@ -107,16 +107,11 @@ li {
               transform: translate(0px, 0px);
     }
   }
-  .inTextLink .bounce {
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 100px;
-    height: 20px;
-    width: 150px;
-    padding: 20px;
-    background: tomato;
+  .bounce {
+    position: relative;
+    display: inline-block;
   }
-  .inTextLink .bounce:hover {
+  .bounce:hover {
     animation: bounce 1.5s infinite;
     -webkit-animation: bounce 1.5s infinite;
   }

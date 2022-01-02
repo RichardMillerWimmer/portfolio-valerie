@@ -17,7 +17,7 @@ const Cv: NextPage = () => {
           </p>
           <br />
           <p>
-            If you have any questions or want to talk further please feel free to <Link href='/contact'><a className='inTextLink'>contact</a></Link> me.
+            If you have any questions or want to talk further please feel free to <Link href='/contact'><a className='inTextLink bounce'>contact</a></Link> me.
           </p>
           <br />
           <div className={styles.buttonContainer}>
