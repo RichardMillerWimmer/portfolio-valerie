@@ -71,7 +71,7 @@ const Contact: NextPage = () => {
         return (
             <div className={styles.submitted}>
                 <h4>Thank you, <br /> I will be in contact with you as soon as I can.</h4>
-                <h4 className={styles.redirect}>Redirecting to <Link href='/'><a className='inTextLink'>Home</a></Link>...</h4>
+                <h4 className={styles.redirect}>Redirecting to <Link href='/'><a className='inTextLink bounce'>Home</a></Link>...</h4>
             </div>
         )
     }
