@@ -46,11 +46,11 @@ const NavList: React.FC<NavProps> = ({ open, setOpen }: NavProps) => {
 
     return (
         <Ul open={open}>
-            <li className={router.pathname === "/" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/' >Home</Link></li>
-            <li className={router.pathname === "/projects" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/projects'>Projects</Link></li>
-            <li className={router.pathname === "/about" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/about'>About</Link></li>
-            <li className={router.pathname === "/cv" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/cv'>CV</Link></li>
-            <li className={router.pathname === "/contact" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/contact'>Contact</Link></li>
+            <li className={router.pathname === "/" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/' ><a>Home</a></Link></li>
+            <li className={router.pathname === "/projects" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/projects'><a>Projects</a></Link></li>
+            <li className={router.pathname === "/about" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/about'><a>About</a></Link></li>
+            <li className={router.pathname === "/cv" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/cv'><a>CV</a></Link></li>
+            <li className={router.pathname === "/contact" ? styles.active : ""} onClick={() => setOpen(!open)}><Link href='/contact'><a>Contact</a></Link></li>
         </Ul>
     )
 }

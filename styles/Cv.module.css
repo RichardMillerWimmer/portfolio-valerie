@@ -1,12 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 .cvContainer {
   padding: 20px;
+  max-width: 400px;
+  margin: 50px auto;
 }
 
 .boxshadow {
-  -webkit-box-shadow: 2px 1px 15px 5px #dfdfdf;
-          box-shadow: 2px 1px 15px 5px #dfdfdf;
+  -webkit-box-shadow: 0px 0px 20px 1px #e9e9e9;
+          box-shadow: 0px 0px 20px 1px #e9e9e9;
   padding: 10px;
   border-radius: 5px;
+}
+
+.innerContainer {
+  padding: 10px 30px;
 }
 
 .buttonContainer {
@@ -21,5 +29,18 @@
 
 .buttonContainer .resumeButton {
   margin: 0 5px;
+}
+
+@media screen and (min-width: 450px) {
+  .cvContainer {
+    width: 400px;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cvContainer {
+    width: 700px;
+  }
 }
 /*# sourceMappingURL=Cv.module.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,sFAAI;AACZ,OAAO,CAAC,4EAAI;ADCZ,AAAA,gBAAgB,CAAC;EACf,gBAAgB,EAAE,SAAS;EAC3B,QAAQ,EAAE,KAAK;EACf,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,EAAE;CACZ;;AAED,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EACjC,AAAA,gBAAgB,CAAC;IACf,OAAO,EAAE,IAAI;GACd",
+    "sources": [
+        "Burger.module.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "Burger.module.css"
+}

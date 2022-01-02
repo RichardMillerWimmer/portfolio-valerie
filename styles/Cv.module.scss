@@ -1,11 +1,18 @@
 @import "./mixin.scss";
+@import "./variables.scss";
 
 .cvContainer {
   padding: 20px;
+  max-width: 400px;
+  margin: 50px auto;
 }
 
 .boxshadow {
   @include boxshadow;
+}
+
+.innerContainer {
+  padding: 10px 30px;
 }
 
 .buttonContainer {
@@ -14,5 +21,18 @@
   margin: 10px;
   .resumeButton {
     margin: 0 5px;
+  }
+}
+
+@media screen and (min-width: $bp-mobile) {
+  .cvContainer {
+    width: 400px;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: $bp-tablet) {
+  .cvContainer {
+    width: 700px;
   }
 }

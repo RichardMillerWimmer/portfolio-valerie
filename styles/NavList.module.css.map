@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,eAAe,EAAE,SAAS;CAC3B",
+    "sources": [
+        "NavList.module.scss"
+    ],
+    "names": [],
+    "file": "NavList.module.css"
+}
