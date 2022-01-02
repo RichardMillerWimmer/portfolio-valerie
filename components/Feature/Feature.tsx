@@ -3,7 +3,7 @@ import React from 'react'
 import { FeatureType } from './FeatureContainer'
 
 const Feature: React.FC<FeatureType> = (props: FeatureType): JSX.Element => {
-    console.log(props)
+    // console.log(props)
 
     return (
         <div>

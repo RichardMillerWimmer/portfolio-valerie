@@ -22,10 +22,10 @@ export type FormSubmit = {
 }
 
 const schema: yup.SchemaOf<FormSubmit> = yup.object().shape({
-    name: yup.string().max(20).defined(),
-    email: yup.string().max(30).email().defined(),
-    subject: yup.string().max(30).defined(),
-    message: yup.string().max(250).defined(),
+    name: yup.string().max(20).defined().required(),
+    email: yup.string().max(30).email().defined().required(),
+    subject: yup.string().max(30).defined().required(),
+    message: yup.string().max(250).defined().required(),
     token: yup.string().default('').defined()
 })
 
@@ -40,6 +40,9 @@ const Contact: NextPage = () => {
             router.push('/')
         }, 4000)
     }
+
+    // console.log(methods)
+    // console.log(methods.formState.isValid)
 
     const formSubmitHandler: SubmitHandler<FormSubmit & BaseSyntheticEvent> = async (data: FormSubmit, event?: BaseSyntheticEvent): Promise<void> => {
 
@@ -88,7 +91,9 @@ const Contact: NextPage = () => {
                         <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
                     <div className={styles.formSubmit}>
+                        {/* {methods.formState.isValid ? '' : <Button variant='outlined' type='submit'>Send<SendIcon className={styles.materialIcon} /></Button>} */}
                         <Button variant='outlined' type='submit'>Send<SendIcon className={styles.materialIcon} /></Button>
+
                     </div>
                 </form>
                 <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size='invisible' ref={reCaptchaRef} />
