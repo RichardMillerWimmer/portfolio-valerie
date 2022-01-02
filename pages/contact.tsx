@@ -4,6 +4,7 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 import styles from '../styles/Contact.module.scss'
 import { NextRouter, useRouter } from 'next/router'
+import SendIcon from '@mui/icons-material/Send';
 
 import * as yup from 'yup'
 import { FormProvider, useForm, SubmitHandler } from 'react-hook-form'
@@ -87,7 +88,7 @@ const Contact: NextPage = () => {
                         <FormInput {...{ label: 'message', multiline: true, rows: 5 }} />
                     </div>
                     <div className={styles.formSubmit}>
-                        <Button variant='outlined' type='submit'>Send</Button>
+                        <Button variant='outlined' type='submit'>Send<SendIcon /></Button>
                     </div>
                 </form>
                 <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size='invisible' ref={reCaptchaRef} />
