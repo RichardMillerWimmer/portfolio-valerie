@@ -21,7 +21,6 @@ const FormInput: React.FC<InputProps> = (props: InputProps) => {
         dynamicErrorObj = Object.values(errors)[0]
         console.log(dynamicErrorObj)
     }
-    console.log('errors object', errors)
 
     return (
         <div className={styles.formInput}>
