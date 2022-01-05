@@ -1,5 +1,6 @@
 import FeatureContainer from '../components/Feature/FeatureContainer'
 import Hero from '../components/Hero'
+import Landing from '../components/Landing'
 import styles from '../styles/Home.module.scss'
 import { createClient } from 'contentful'
 
@@ -10,8 +11,9 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <Hero />
       <main className={styles.main}>
-        <Hero />
+        <Landing />
         <FeatureContainer />
       </main>
     </div>

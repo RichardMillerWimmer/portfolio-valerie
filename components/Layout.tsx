@@ -17,7 +17,7 @@ const Layout: React.FC = (props) => {
                 <div className={styles.contentWrapper}>
                     {props.children}
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </>
     )
