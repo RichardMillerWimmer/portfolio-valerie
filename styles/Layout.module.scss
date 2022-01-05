@@ -1,7 +1,23 @@
+@import "variables";
+
 .layoutContainer {
   position: relative;
   min-height: 100%;
 }
+
+.hiddenLink {
+  position: absolute;
+  background-color: $color-secondary;
+  padding: 10px;
+  margin: 5px;
+  transform: translateY(-120%);
+  transition: 0.5s;
+}
+
+.hiddenLink:focus {
+  transform: translateY(0);
+}
+
 .contentWrapper {
   padding-bottom: 15vh;
 }
