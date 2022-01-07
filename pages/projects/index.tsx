@@ -32,12 +32,23 @@ const testData: ProjectType[] = [
     {
         id: 1,
         title: 'test title 2',
-        body: 'test body 1',
+        body: 'test body 3',
         date: 'some date 2',
         authors: ['Val'],
         journal: 'journal 2',
         link: 'link 2',
         image: 'image 2',
+        feature: false
+    },
+    {
+        id: 2,
+        title: 'test title 3',
+        body: 'test body 3',
+        date: 'some date 3',
+        authors: ['Val'],
+        journal: 'journal 3',
+        link: 'link 3',
+        image: 'image 3',
         feature: false
     }
 ]

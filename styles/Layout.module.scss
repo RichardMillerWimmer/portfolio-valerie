@@ -2,7 +2,11 @@
 
 .layoutContainer {
   position: relative;
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+.mainContentWrapper {
+  padding-bottom: 15vh;
 }
 
 .hiddenLink {
@@ -16,8 +20,4 @@
 
 .hiddenLink:focus {
   transform: translateY(0);
-}
-
-.contentWrapper {
-  padding-bottom: 15vh;
 }

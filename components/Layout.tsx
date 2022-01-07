@@ -1,5 +1,5 @@
 import React from 'react'
-// import Footer from './Footer';
+import Footer from './Footer';
 import Link from 'next/link';
 
 import Meta from './Meta';
@@ -14,12 +14,14 @@ const Layout: React.FC = (props) => {
         <>
             <Meta {...layoutMeta} />
             <div className={styles.layoutContainer}>
-                <Link href='#mainContent'><a className={styles.hiddenLink}>skip navigation</a></Link>
-                <Nav />
-                <main className={styles.contentWrapper}>
-                    {props.children}
-                </main>
-                {/* <Footer /> */}
+                <div className={styles.mainContentWrapper}>
+                    <Link href='#mainContent'><a className={styles.hiddenLink}>skip navigation</a></Link>
+                    <Nav />
+                    <main>
+                        {props.children}
+                    </main>
+                </div>
+                <Footer />
             </div>
         </>
     )

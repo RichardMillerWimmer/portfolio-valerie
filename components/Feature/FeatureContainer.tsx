@@ -18,7 +18,13 @@ const testData: FeatureType[] = [
     {
         id: 1,
         title: 'test title 2',
-        body: 'test body 1',
+        body: 'test body 2',
+        feature: false
+    },
+    {
+        id: 2,
+        title: 'test title 3',
+        body: 'test body 3',
         feature: false
     }
 ]
