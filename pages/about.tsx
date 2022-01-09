@@ -11,7 +11,7 @@ type AboutType = {
 }
 
 const About: NextPage<AboutType> = ({ about }: AboutType) => {
-    console.log(about)
+    // console.log(about)
     return (
         <section className={styles.aboutContainer}>
             <div className={styles.boxshadow}>

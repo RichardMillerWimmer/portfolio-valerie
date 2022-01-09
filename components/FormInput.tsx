@@ -19,7 +19,7 @@ const FormInput: React.FC<InputProps> = (props: InputProps) => {
 
     if (errors && Object.keys(errors)[0] === label) {
         dynamicErrorObj = Object.values(errors)[0]
-        console.log(dynamicErrorObj)
+        // console.log(dynamicErrorObj)
     }
 
     return (
