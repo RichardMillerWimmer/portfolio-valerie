@@ -4,7 +4,6 @@ import styles from '../styles/About.module.scss';
 import { NextPage } from 'next';
 import { client } from './index'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-// import { EntryCollection } from 'contentful-management/dist/typings/entities/entry'
 
 type AboutType = {
     about: any

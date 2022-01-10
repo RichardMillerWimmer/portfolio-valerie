@@ -1,7 +1,8 @@
 import React from 'react'
 import { NextPage } from 'next'
-import Project from './[id]'
-import styles from '../../styles/Projects.module.scss';
+import Project from '../components/Project'
+import styles from '../styles/Projects.module.scss';
+// import { client } from '../index'
 
 type Author = string
 
@@ -76,3 +77,14 @@ const Projects: NextPage = () => {
 }
 
 export default Projects
+
+// export async function getStaticProps() {
+
+//     const res = await client.getEntries({ content_type: 'project' })
+
+//     return {
+//         props: {
+//             project: res.items
+//         }
+//     }
+// }
