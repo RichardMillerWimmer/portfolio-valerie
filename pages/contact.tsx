@@ -61,8 +61,8 @@ const Contact: NextPage = () => {
                 setSubmitted(true)
                 homeRedirect()
             })
-            .catch((err) => {
-                console.log(err)
+            .catch(() => {
+                // console.log(err)
                 // setSubmitted(true)
             })
     }

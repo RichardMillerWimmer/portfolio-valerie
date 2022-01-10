@@ -8,9 +8,9 @@ class MyDocument extends Document {
         return (
             <Html lang='en'>
                 <Head>
+                    <Favicon />
                     <meta charSet="utf-8" />
                     <meta name='description' content='Valerie Miller Ph.D. making a name for herself in the world of Occupational Therapy. Expertise includes sensory processing, pediatrics, community inclusion.' />
-                    <Favicon />
                 </Head>
                 <body>
                     <Main />
