@@ -4,8 +4,8 @@ const Landing: React.FC = () => {
 
     return (
         <section id='mainContent'>
-            <h2>Thanks for visiting.</h2>
-            <p>This will be main content on home page. It will include a blurb from Valerie, things about her, what she likes to do, what she is hoping to do, and links to elsewhere on the site.</p>
+            <h4>Hello friends and colleagues,</h4>
+            <p> thank you for visiting. A little bit about myself, I am on faculty at the University of Cincinnati teaching in the Master of Occupational Therapy program. Early on I discovered a passion for helping people through practices in Occupation Therapy and have found a calling in teaching people how to do so. My areas of expertise include pediatrics, school-based practice, sensory processing, and community inclusion. Whether it is teaching students, practicing in the field, consulting, or conducting research I approach my pursuits with <b>heart</b>, <b>purpose</b>, and <b>conviction</b>.</p>
         </section>
     )
 }
