@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { NextPage } from 'next'
 import { ProjectType } from '../pages/projects'
