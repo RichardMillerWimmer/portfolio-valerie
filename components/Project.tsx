@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { NextPage } from 'next'
 import { ProjectType } from '../pages/projects'
 
-const Project: NextPage<ProjectType> = (props: ProjectType): JSX.Element => {
+const Project: NextPage<ProjectType> = (props) => {
 
     const { title, date, authors, journal, link, image } = props
 

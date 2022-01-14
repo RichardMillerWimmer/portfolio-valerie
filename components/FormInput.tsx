@@ -10,7 +10,7 @@ type InputProps = {
     rows?: number
 }
 
-const FormInput: React.FC<InputProps> = (props: InputProps) => {
+const FormInput: React.FC<InputProps> = (props) => {
     const { label, multiline, rows } = props
 
     const { control, formState: { errors } } = useFormContext()

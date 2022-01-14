@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, useRef, useState } from 'react'
+import { BaseSyntheticEvent, useRef, useState } from 'react'
 import axios from 'axios'
 import { NextPage } from 'next'
 import Link from 'next/link'

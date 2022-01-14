@@ -2,7 +2,7 @@ import React from 'react'
 // import Image from 'next/image'
 import { FeatureType } from './FeatureContainer'
 
-const Feature: React.FC<FeatureType> = (props: FeatureType): JSX.Element => {
+const Feature: React.FC<FeatureType> = (props): JSX.Element => {
     // console.log(props)
 
     return (

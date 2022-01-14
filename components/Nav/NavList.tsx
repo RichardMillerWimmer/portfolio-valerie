@@ -40,7 +40,7 @@ interface NavProps {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const NavList: React.FC<NavProps> = ({ open, setOpen }: NavProps) => {
+const NavList: React.FC<NavProps> = ({ open, setOpen }) => {
     const router = useRouter();
     // console.log(router)
 
