@@ -16,7 +16,7 @@ const About: NextPage<AboutType> = ({ about }: AboutType) => {
                 <h2 className={styles.aboutHeader}>About</h2>
                 <div className={styles.contentBox}>
                     <div className={styles.imageBox}>
-                        <Image src='/Miller_Valerie_Headshot.png' alt='Valerie Miller Head Shot' layout='fill' />
+                        <Image className={styles.img} src='/Miller_Valerie_Headshot.png' alt='Valerie Miller Head Shot' layout='fill' />
                     </div>
                     <article className={styles.aboutArticle}>
                         {documentToReactComponents(about.about)}
