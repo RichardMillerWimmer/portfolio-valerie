@@ -101,28 +101,30 @@ const testPresentations: PresentationType[] = [
 const Projects: NextPage = () => {
 
     return (
-        <section className={styles.projectsContainer}>
-            <div className={styles.boxshadow}>
-                <h2 className='visualHidden'>Projects</h2>
-                <div>
-                    <p>My work includes..."this is to be a larger section about the type of projects and potential highlighed projects"</p>
+        <>
+            <section className={styles.projectsContainer}>
+                <div className={styles.boxshadow}>
+                    <h2 className='visualHidden'>Projects</h2>
+                    <div>
+                        <p>My work includes..."this is to be a larger section about the type of projects and potential highlighed projects"</p>
+                    </div>
                 </div>
-                <div>
-                    {testProjects.map((project) => (
-                        <div key={project.id}>
-                            <Project {...project} />
-                        </div>
-                    ))}
-                </div>
-                {/* <div>
+            </section>
+            <div>
+                {testProjects.map((project) => (
+                    <div key={project.id}>
+                        <Project {...project} />
+                    </div>
+                ))}
+            </div>
+            {/* <div>
                     {testPresentations.map((project) => (
                         <div key={project.id}>
                             <Presentation {...project} />
                         </div>
                     ))}
                 </div> */}
-            </div>
-        </section>
+        </>
     )
 }
 
