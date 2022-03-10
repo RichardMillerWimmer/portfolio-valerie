@@ -57,7 +57,7 @@ const Contact: NextPage = () => {
 
         axios.post('/api/contact/', data)
             .then((res) => {
-                console.log(res)
+                // console.log(res)
                 setSubmitted(true)
                 homeRedirect()
             })
