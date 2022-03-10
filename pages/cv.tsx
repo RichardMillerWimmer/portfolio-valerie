@@ -31,7 +31,7 @@ const Cv: NextPage = () => {
               <a target='_blank' rel='noopener noreferrer'
                 href="https://docs.google.com/document/d/1kXB1r5C5HdI9CAevKVj7Ve1Uwo67iALS/copy"
               >
-                google <ArrowForwardIcon className={styles.materialIcon} />
+                google doc <ArrowForwardIcon className={styles.materialIcon} />
               </a>
             </Button>
           </div>

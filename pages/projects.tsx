@@ -103,7 +103,7 @@ const Projects: NextPage = () => {
     return (
         <section className={styles.projectsContainer}>
             <div className={styles.boxshadow}>
-                <h1>Projects</h1>
+                <h2 className='visualHidden'>Projects</h2>
                 <div>
                     <p>My work includes..."this is to be a larger section about the type of projects and potential highlighed projects"</p>
                 </div>
