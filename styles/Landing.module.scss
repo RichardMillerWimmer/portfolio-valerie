@@ -1,0 +1,11 @@
+@import "./mixin.scss";
+@import "variables.scss";
+
+.boxShadow {
+  margin-top: 30px;
+  @include boxshadow;
+}
+
+.mainContent {
+  padding: 0 30px 15px 30px;
+}
