@@ -11,8 +11,8 @@ export type ProjectType = {
     body: string,
     date: string,
     authors: Author[],
-    journal: string,
-    link: string,
+    location: string,
+    link?: string,
     image: string,
     feature: boolean
 }
@@ -23,7 +23,7 @@ export type PresentationType = {
     body: string,
     date: string,
     authors: Author[],
-    conference: string,
+    location: string,
     image: string,
     feature: boolean
 }
@@ -35,7 +35,7 @@ const testProjects: ProjectType[] = [
         body: 'test body 1',
         date: 'some date 1',
         authors: ['Val'],
-        journal: 'journal 1',
+        location: 'journal 1',
         link: 'link 1',
         image: 'image 1',
         feature: false
@@ -46,7 +46,7 @@ const testProjects: ProjectType[] = [
         body: 'test body 3',
         date: 'some date 2',
         authors: ['Val'],
-        journal: 'journal 2',
+        location: 'journal 2',
         link: 'link 2',
         image: 'image 2',
         feature: false
@@ -57,7 +57,7 @@ const testProjects: ProjectType[] = [
         body: 'test body 3',
         date: 'some date 3',
         authors: ['Val'],
-        journal: 'journal 3',
+        location: 'journal 3',
         link: 'link 3',
         image: 'image 3',
         feature: false
@@ -71,7 +71,7 @@ const testPresentations: PresentationType[] = [
         body: 'test body 1',
         date: 'some date 1',
         authors: ['Val'],
-        conference: 'conference 1',
+        location: 'conference 1',
         image: 'image 1',
         feature: false
     },
@@ -81,7 +81,7 @@ const testPresentations: PresentationType[] = [
         body: 'test body 3',
         date: 'some date 2',
         authors: ['Val'],
-        conference: 'conference 2',
+        location: 'conference 2',
         image: 'image 2',
         feature: false
     },
@@ -91,7 +91,7 @@ const testPresentations: PresentationType[] = [
         body: 'test body 3',
         date: 'some date 3',
         authors: ['Val'],
-        conference: 'conference 3',
+        location: 'conference 3',
         image: 'image 3',
         feature: false
     }
