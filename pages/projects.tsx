@@ -3,13 +3,12 @@ import Project from '../components/Project'
 import styles from '../styles/Projects.module.scss';
 // import { client } from '../index'
 
-export type ProjectType = {
+export type PublicationType = {
     id: number,
     title: string,
     body: string,
-    date: string,
     authors: string,
-    location: string,
+    publication: string[],
     link?: string,
     image?: string,
     feature: boolean
@@ -25,14 +24,13 @@ export type PresentationType = {
     feature: boolean
 }
 
-const testProjects: ProjectType[] = [
+const testPublications: PublicationType[] = [
     {
         id: 0,
         title: 'test title 1',
         body: 'test body 1',
-        date: 'some date 1',
         authors: 'Val',
-        location: 'journal 1',
+        publication: ['some publication 1'],
         link: 'link 1',
         image: 'image 1',
         feature: false
@@ -41,9 +39,8 @@ const testProjects: ProjectType[] = [
         id: 1,
         title: 'test title 2',
         body: 'test body 3',
-        date: 'some date 2',
         authors: 'Val',
-        location: 'journal 2',
+        publication: ['some publication 2'],
         link: 'link 2',
         image: 'image 2',
         feature: false
@@ -52,9 +49,8 @@ const testProjects: ProjectType[] = [
         id: 2,
         title: 'test title 3',
         body: 'test body 3',
-        date: 'some date 3',
         authors: 'Val',
-        location: 'journal 3',
+        publication: ['some publication 3'],
         link: 'link 3',
         image: 'image 3',
         feature: false
@@ -101,7 +97,7 @@ const Projects: NextPage = () => {
                 <p>For a full list including: publications, presentations, grants, professional development, memberships, and licenses please see my CV</p>
             </section>
             <div>
-                {testProjects.map((project) => (
+                {testPublications.map((project) => (
                     <div key={project.id}>
                         <Project {...project} />
                     </div>
