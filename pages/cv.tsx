@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import React from "react";
 import styles from "../styles/Cv.module.scss";
 import { Button } from '@material-ui/core'
 import Link from "next/link";

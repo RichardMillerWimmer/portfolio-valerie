@@ -1,8 +1,12 @@
 @import "./mixin.scss";
-@import "variables.scss";
+@import "./variables.scss";
+
+.landingContainer {
+  margin: 30px auto;
+  max-width: 1000px;
+}
 
 .boxShadow {
-  margin: 30px 20px;
   @include boxshadow;
 }
 
