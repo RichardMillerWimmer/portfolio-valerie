@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import { PresentationType } from '../pages/projects'
 
 const Presentation: NextPage<PresentationType> = (props: any) => {
-    const { title, body, authors, given, image, feature } = props.fields
+    const { title, body, authors, given, image } = props.fields
 
     return (
         <article>
