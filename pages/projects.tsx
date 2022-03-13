@@ -24,6 +24,11 @@ export type PresentationType = {
     feature: boolean
 }
 
+type ProjectType = {
+    presentations: PresentationType[],
+    publications: PublicationType[]
+}
+
 const testPublications: PublicationType[] = [
     {
         id: 0,
@@ -88,8 +93,9 @@ const testPresentations: PresentationType[] = [
 ]
 
 
-const Projects: NextPage = (props) => {
-    console.log(props)
+const Projects: NextPage<ProjectType> = (props) => {
+    console.log(props.publications)
+    console.log(props.presentations)
 
     return (
         <>
