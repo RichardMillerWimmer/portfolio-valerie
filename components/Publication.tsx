@@ -3,13 +3,8 @@ import { NextPage } from 'next'
 import { PublicationType } from '../pages/projects'
 
 const Publication: NextPage<PublicationType> = (props: any) => {
-    // console.log(props)
-
     const { title, authors, publication, link, image, feature } = props.fields
     const body = props.fields.description.content[0].content[0].value
-    console.log(body)
-
-    // console.log(props.fields.description.content[0].content[0].value)
 
     return (
         <article>
