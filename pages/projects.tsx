@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import Project from '../components/Project'
 import styles from '../styles/Projects.module.scss';
-// import { client } from '../index'
+import { client } from './index'
 
 export type PublicationType = {
     id: number,
@@ -88,7 +88,8 @@ const testPresentations: PresentationType[] = [
 ]
 
 
-const Projects: NextPage = () => {
+const Projects: NextPage = (props) => {
+    console.log(props)
 
     return (
         <>
@@ -116,13 +117,15 @@ const Projects: NextPage = () => {
 
 export default Projects
 
-// export async function getStaticProps() {
+export async function getStaticProps() {
 
-//     const res = await client.getEntries({ content_type: 'project' })
+    const publications = await client.getEntries({ content_type: 'publication' })
+    const presentations = await client.getEntries({ content_type: 'presentation' })
 
-//     return {
-//         props: {
-//             project: res.items
-//         }
-//     }
-// }
+    return {
+        props: {
+            publications: publications,
+            presentations: presentations
+        }
+    }
+}
