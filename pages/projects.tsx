@@ -93,7 +93,7 @@ type ProjectType = {
 // ]
 
 
-const Projects: NextPage<ProjectType> = (props) => {
+const Projects: NextPage<ProjectType> = (props: any) => {
     const { publications, presentations } = props
     console.log(publications)
 
@@ -104,7 +104,7 @@ const Projects: NextPage<ProjectType> = (props) => {
                 <p>For a full list including: publications, presentations, grants, professional development, memberships, service projects, and licenses please see my CV</p>
             </section>
             <div>
-                {publications.map((publication: PublicationType) => (
+                {publications.items.map((publication: PublicationType) => (
                     <div key={publication.id}>
                         <Publication {...publication} />
                     </div>
