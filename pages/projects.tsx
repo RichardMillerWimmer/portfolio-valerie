@@ -94,7 +94,7 @@ const Projects: NextPage = () => {
         <>
             <section className={styles.projectsContainer}>
                 <h2 className='visualHidden'>Projects</h2>
-                <p>For a full list including: publications, presentations, grants, professional development, memberships, and licenses please see my CV</p>
+                <p>For a full list including: publications, presentations, grants, professional development, memberships, service projects, and licenses please see my CV</p>
             </section>
             <div>
                 {testPublications.map((project) => (
@@ -103,13 +103,13 @@ const Projects: NextPage = () => {
                     </div>
                 ))}
             </div>
-            {/* <div>
-                    {testPresentations.map((project) => (
-                        <div key={project.id}>
-                            <Presentation {...project} />
-                        </div>
-                    ))}
-                </div> */}
+            <div>
+                {testPresentations.map((project) => (
+                    <div key={project.id}>
+                        {/* <Presentation {...project} /> */}
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
