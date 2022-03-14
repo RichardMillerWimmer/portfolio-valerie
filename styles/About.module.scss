@@ -2,7 +2,7 @@
 @import "./mixin.scss";
 
 .aboutContainer {
-  padding: 20px;
+  @include pageContainer;
 }
 
 .aboutHeader {

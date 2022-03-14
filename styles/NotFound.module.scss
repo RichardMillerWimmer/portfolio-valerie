@@ -1,5 +1,7 @@
+@import "./mixin.scss";
+
 .redirect {
-  padding: 20px;
+  @include pageContainer;
 }
 .redirect a {
   text-decoration: underline;

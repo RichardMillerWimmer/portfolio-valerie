@@ -2,6 +2,5 @@
 @import "./mixin.scss";
 
 .projectsContainer {
-  padding: 20px;
+  @include pageContainer;
 }
-
