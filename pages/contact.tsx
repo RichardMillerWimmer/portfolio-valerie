@@ -1,7 +1,6 @@
 import { BaseSyntheticEvent, useRef, useState } from 'react'
 import axios from 'axios'
 import { NextPage } from 'next'
-import Link from 'next/link'
 import styles from '../styles/Contact.module.scss'
 import { NextRouter, useRouter } from 'next/router'
 import SendIcon from '@mui/icons-material/Send';
@@ -12,6 +11,7 @@ import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import FormInput from '../components/FormInput'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { Button } from '@material-ui/core'
+import Redirect from '../components/Redirect'
 
 export type FormSubmit = {
     name: string,
@@ -69,10 +69,7 @@ const Contact: NextPage = () => {
 
     if (submitted) {
         return (
-            <div className={styles.submitted}>
-                <h4>Thank you, <br /> I will be in contact with you as soon as I can.</h4>
-                <h4 className={styles.redirect}>Redirecting to <Link href='/'><a className='inTextLink bounce'>Home</a></Link>...</h4>
-            </div>
+            <Redirect />
         )
     }
 
