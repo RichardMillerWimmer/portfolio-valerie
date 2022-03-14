@@ -21,6 +21,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         const secret = process.env.RECAPTCH_SECRET_KEY
         const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`, {method: 'POST'})
         const data = await response.json()
+        console.log('data', data)
         return data.success
     }
 
@@ -48,9 +49,9 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     }
 
     await transporter.sendMail(mailOptions, (err: SentMessageInfo, info: SentMessageInfo) => {
-        // console.log('sendMail')
+        console.log('sendMail')
         if (err) {
-            // console.log('Error', err)
+            console.log('Error', err)
             res.send(500)
         }
         else {
