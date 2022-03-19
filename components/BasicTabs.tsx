@@ -17,7 +17,7 @@ function a11yProps(index: number) {
 function BasicTabs(props: any) {
   const [projectType, setProjectType] = useState(0);
   const { publications, presentations } = props
-  console.log(publications)
+  // console.log(publications)
 
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
