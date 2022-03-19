@@ -34,19 +34,19 @@ function BasicTabs(props: any) {
       </Box>
       <TabPanel value={projectType} index={0}>
         publications
-        {/* {publications.items.map((publication: PublicationType) => (
+        {publications.items.map((publication: PublicationType) => (
           <div key={publication.id}>
             <Publication {...publication} />
           </div>
-        ))} */}
+        ))}
       </TabPanel>
       <TabPanel value={projectType} index={1}>
         presentations
-        {/* {presentations.items.map((presentation: PresentationType) => (
+        {presentations.items.map((presentation: PresentationType) => (
           <div key={presentation.id}>
             <Presentation {...presentation} />
           </div>
-        ))} */}
+        ))}
       </TabPanel>
     </Box>
   );

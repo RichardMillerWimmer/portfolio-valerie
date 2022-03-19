@@ -32,20 +32,6 @@ type ProjectType = {
 }
 
 const Projects: NextPage<ProjectType> = (props: any) => {
-    const { publications, presentations } = props
-    // console.log(publications)
-
-    // const publicationsMap = publications.items.map((publication: PublicationType) => (
-    //     <div key={publication.id}>
-    //         <Publication {...publication} />
-    //     </div>
-    // ))
-
-    // const presentationsMap = presentations.items.map((presentation: PresentationType) => (
-    //     <div key={presentation.id}>
-    //         <Presentation {...presentation} />
-    //     </div>
-    // ))
 
     return (
         <>
@@ -53,25 +39,7 @@ const Projects: NextPage<ProjectType> = (props: any) => {
                 <h2 className='visualHidden'>Projects</h2>
                 <p>For a full list including: publications, presentations, grants, professional development, memberships, service projects, and licenses please see my CV</p>
             </section>
-            <BasicTabs presentations publications />
-            {/* {publicationsMap} */}
-            {/* {presentationsMap} */}
-            {/* <h3>Publications</h3>
-            <div>
-                {publications.items.map((publication: PublicationType) => (
-                    <div key={publication.id}>
-                        <Publication {...publication} />
-                    </div>
-                ))}
-            </div> */}
-            {/* <h3>Presentations</h3>
-            <div>
-                {presentations.items.map((presentation: PresentationType) => (
-                    <div key={presentation.id}>
-                        <Presentation {...presentation} />
-                    </div>
-                ))}
-            </div> */}
+            <BasicTabs {...props} />
         </>
     )
 }
