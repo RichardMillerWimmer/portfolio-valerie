@@ -3,6 +3,7 @@ import Publication from '../components/Publication'
 import Presentation from '../components/Presentation'
 import styles from '../styles/Projects.module.scss'
 import { client } from './index'
+import BasicTabs from '../components/BasicTabs'
 
 export type PublicationType = {
     id: number,
@@ -40,6 +41,7 @@ const Projects: NextPage<ProjectType> = (props: any) => {
                 <h2 className='visualHidden'>Projects</h2>
                 <p>For a full list including: publications, presentations, grants, professional development, memberships, service projects, and licenses please see my CV</p>
             </section>
+            <BasicTabs />
             <h3>Publications</h3>
             <div>
                 {publications.items.map((publication: PublicationType) => (
