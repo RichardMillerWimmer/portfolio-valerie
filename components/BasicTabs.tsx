@@ -27,13 +27,13 @@ function BasicTabs(props: any) {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={projectType} onChange={handleChange} aria-label="Project Tabs">
+        <Tabs value={projectType} onChange={handleChange} centered aria-label="Project Tabs">
           <Tab label="Publications" {...a11yProps(0)} />
           <Tab label="Presentations" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={projectType} index={0}>
-        publications
+        <h3>Publications</h3>
         {publications.items.map((publication: PublicationType) => (
           <div key={publication.id}>
             <Publication {...publication} />
@@ -41,7 +41,7 @@ function BasicTabs(props: any) {
         ))}
       </TabPanel>
       <TabPanel value={projectType} index={1}>
-        presentations
+        <h3>Presentations</h3>
         {presentations.items.map((presentation: PresentationType) => (
           <div key={presentation.id}>
             <Presentation {...presentation} />

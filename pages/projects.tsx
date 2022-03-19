@@ -1,6 +1,4 @@
 import { NextPage } from 'next'
-import Publication from '../components/Publication'
-import Presentation from '../components/Presentation'
 import styles from '../styles/Projects.module.scss'
 import { client } from './index'
 import BasicTabs from '../components/BasicTabs'
