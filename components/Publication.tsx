@@ -13,12 +13,14 @@ const Publication: NextPage<PublicationType> = (props: any) => {
     return (
         <CardProjects>
             <article className='projectContent'>
-                <h5>{title}</h5>
-                <p>{body}</p>
-                <p>{publication}</p>
-                <p>{authors}</p>
-                <p>{link}</p>
-                <p>{image}</p>
+                <h5 className='projectTitle'>{title}</h5>
+                <div className='projectDescription'>
+                    <p>{body}</p>
+                    <p>{publication}</p>
+                    <p>{authors}</p>
+                    <p>{link}</p>
+                    <p>{image}</p>
+                </div>
             </article>
         </CardProjects>
     )
