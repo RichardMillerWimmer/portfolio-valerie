@@ -6,9 +6,18 @@
   justify-content: center;
 }
 
+// @keyframes cardAnimation {
+
+// }
+
 .projectDescription {
   display: none;
   opacity: 0;
+  transition: display 1s;
+}
+
+.projectTitle {
+  transition: font-size 1s;
 }
 
 .projectContent:hover .projectTitle {

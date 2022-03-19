@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types'
 import { NextPage } from 'next'
 import { PublicationType } from '../pages/projects'
-import CardProjects from './ProjectCard'
-
-
+import ProjectCard from './ProjectCard'
 
 
 const Publication: NextPage<PublicationType> = (props: any) => {
@@ -11,7 +9,7 @@ const Publication: NextPage<PublicationType> = (props: any) => {
     const body = props.fields.description.content[0].content[0].value
 
     return (
-        <CardProjects>
+        <ProjectCard>
             <article className='projectContent'>
                 <h5 className='projectTitle'>{title}</h5>
                 <div className='projectDescription'>
@@ -22,7 +20,7 @@ const Publication: NextPage<PublicationType> = (props: any) => {
                     <p>{image}</p>
                 </div>
             </article>
-        </CardProjects>
+        </ProjectCard>
     )
 }
 

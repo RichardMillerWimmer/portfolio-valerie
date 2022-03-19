@@ -1,18 +1,24 @@
 import PropTypes from 'prop-types'
 import { NextPage } from 'next'
 import { PresentationType } from '../pages/projects'
+import ProjectCard from './ProjectCard'
+
 
 const Presentation: NextPage<PresentationType> = (props: any) => {
     const { title, body, authors, given, image } = props.fields
 
     return (
-        <article>
-            <h4>{title}</h4>
-            <p>{body}</p>
-            <p>{given}</p>
-            <p>{authors}</p>
-            <p>{image}</p>
-        </article>
+        <ProjectCard>
+            <article className='projectContent'>
+                <h5 className='projectTitle'>{title}</h5>
+                <div className='projectDescription'>
+                    <p>{body}</p>
+                    <p>{given}</p>
+                    <p>{authors}</p>
+                    <p>{image}</p>
+                </div>
+            </article>
+        </ProjectCard>
     )
 }
 
