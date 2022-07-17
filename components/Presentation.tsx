@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types'
 import { NextPage } from 'next'
 import { PresentationType } from '../pages/projects'
 import ProjectCard from './ProjectCard'
-
 
 const Presentation: NextPage<PresentationType> = (props: any) => {
     const { title, body, authors, given, image } = props.fields
@@ -20,16 +18,6 @@ const Presentation: NextPage<PresentationType> = (props: any) => {
             </article>
         </ProjectCard>
     )
-}
-
-Presentation.propTypes = {
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
-    given: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    authors: PropTypes.string.isRequired,
-    image: PropTypes.string,
-    feature: PropTypes.bool.isRequired
 }
 
 export default Presentation

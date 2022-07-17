@@ -49,6 +49,8 @@ export async function getStaticProps() {
     const publications = await client.getEntries({ content_type: 'publication' })
     const presentations = await client.getEntries({ content_type: 'presentation' })
 
+    console.log(publications.items[0])
+
     return {
         props: {
             publications: publications,
