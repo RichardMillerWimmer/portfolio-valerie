@@ -12,7 +12,7 @@ const Cv: NextPage = () => {
         <div className={styles.innerContainer}>
           <h2 className='visualHidden'>CV</h2>
           <p>
-            For your convienence you can download my CV or view the google doc.
+            For your convenience you can download my CV or view the google doc.
           </p>
           <br />
           <p>

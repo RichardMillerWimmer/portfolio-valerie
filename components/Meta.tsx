@@ -22,9 +22,9 @@ const Meta: React.FC<MetaObj> = (props) => {
 }
 
 Meta.defaultProps = {
-    title: 'WebDev News',
-    keywords: 'web development, programming',
-    description: 'Get the latest news in web dev.'
+    title: 'Velerie-OTR-L',
+    keywords: 'Occupational Therapy, Research, Sensory Processing',
+    description: 'Valerie is an up-and-coming leader in sensory processing, disability, and inclusion. Active in research, community projects, and speaking.'
 }
 
 export default Meta;
