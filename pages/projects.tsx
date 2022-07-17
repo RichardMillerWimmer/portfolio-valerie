@@ -34,8 +34,11 @@ const Projects: NextPage<ProjectType> = (props: any) => {
     return (
         <>
             <section className={styles.projectsContainer}>
-                <h2 className='visualHidden'>Projects</h2>
-                <p>For a full list including: publications, presentations, grants, professional development, memberships, service projects, and licenses please see my CV</p>
+                <div className={styles.contentBox}>
+                    <h2 className='visualHidden'>Projects</h2>
+                    <p>For a full list including: publications, presentations, grants, professional development, memberships, service
+                        projects, and licenses please see my CV</p>
+                </div>
             </section>
             <BasicTabs {...props} />
         </>

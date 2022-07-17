@@ -4,3 +4,14 @@
 .projectsContainer {
   @include pageContainer;
 }
+
+.contentBox {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+@media screen and (min-width: $bp-tablet) {
+  .contentBox {
+    width: 60vw;
+  }
+}
