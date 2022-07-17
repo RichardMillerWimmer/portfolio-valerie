@@ -7,13 +7,10 @@ const Publication: NextPage<PublicationType> = (props: any) => {
     const { title, authors, publication, link, image } = props.fields
     const body = props.fields.description.content[0].content[0].value
 
-    // console.log(title, authors, publication, link, image, body)
-    // console.log(props.fields)
-
     return (
         <ProjectCard>
             <article className='projectContent'>
-                <h5 className='projectTitle'>{title}</h5>
+                <h4 className='projectTitle'>{title}</h4>
                 <div className='projectDescription'>
                     <p>{body}</p>
                     <p>{publication}</p>

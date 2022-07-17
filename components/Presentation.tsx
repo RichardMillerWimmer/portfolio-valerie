@@ -8,7 +8,7 @@ const Presentation: NextPage<PresentationType> = (props: any) => {
     return (
         <ProjectCard>
             <article className='projectContent'>
-                <h5 className='projectTitle'>{title}</h5>
+                <h4 className='projectTitle'>{title}</h4>
                 <div className='projectDescription'>
                     <p>{body}</p>
                     <p>{given}</p>
