@@ -1,5 +1,5 @@
 import Layout from '../components/Layout'
-import type { AppProps, NextWebVitalsMetric } from 'next/app'
+import type { AppProps } from 'next/app'
 
 import '../styles/reset.css'
 import '../styles/globals.scss'
@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export function reportWebVitals(metric: NextWebVitalsMetric) {
-  console.log(metric)
-}
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   console.log(metric)
+// }
 
 export default MyApp

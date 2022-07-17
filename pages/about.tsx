@@ -30,9 +30,7 @@ const About: NextPage<AboutType> = ({ about }: AboutType) => {
 export default About
 
 export async function getStaticProps() {
-
     const res = await client.getEntries({ content_type: 'about' })
-
     return {
         props: {
             about: res.items[0].fields
