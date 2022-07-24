@@ -12,7 +12,7 @@ const PASSWORD = process.env.PASSWORD
 const TO_EMAIL = process.env.TO_EMAIL
 
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function contact(req: NextApiRequest, res: NextApiResponse) {
 
     const formData: FormSubmit = req.body
     const {name, email, subject, message, token} = formData
